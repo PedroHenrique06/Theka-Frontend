@@ -1,0 +1,99 @@
+/* Variáveis úteis */
+:root {
+    --orange: #F78520;
+    --brown: #8C490D;
+}
+
+
+.main-content {
+    display: flex;
+    background-color: var(--brown);
+}
+.logo .leg {
+    height: 563px;
+    width: 821px;
+}
+
+.logo .foot {
+    height: 314px;
+    width: 394px;
+}
+
+.login-container {
+    background-color: white;
+    width: 50%;
+    border-radius: 30px 0px 0px 30px
+}
+
+.login-container .login-title, .login-container .form-container, .login-container .options-container {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+h1 {
+    color: var(--orange);
+    font-size: 64px;
+
+    margin-top: 150px;
+}
+
+
+.form-container fieldset {
+    border: none;
+}
+
+.form-container label {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Ajustes para que o rótulo e o campo de texto fiquem em linhas diferentes */
+.form-container label, .form-container input {
+    display: block;
+    width: 100%;
+    
+    color: var(--orange);
+    border-color: var(--orange);
+
+    margin-bottom: 10px;
+}
+
+.form-container input {
+    border-radius: 100px;
+    border: 1px solid; 
+
+    padding: 10px 20px;
+}
+
+.forgotten-password a, .register-account a {
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--orange);
+}
+
+.options-container {
+    text-align: center;
+}
+
+.forgotten-password, .register-account {
+    margin-bottom: 10px;
+}
+
+.enter-button {
+    text-align: right;
+    margin-right: 50px;
+}
+
+/* Estilização do botão de entrar */
+.enter-button button {
+    color: white;
+    background-color: var(--orange);
+    
+    font-weight: 800;
+    font-size: 16px;
+
+    border: none;
+    border-radius: 100px;
+
+    padding: 10px 20px;
+}

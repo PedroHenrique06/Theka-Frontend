@@ -51,7 +51,6 @@ body {
 
 .logo-title-wrapper, .signup-wrapper {
     position: relative;
-    z-index: 2;
 }
 
 .signup-wrapper {

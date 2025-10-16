@@ -94,6 +94,9 @@ h1 {
     color: var(--orange);
 }
 
+.forgotten-password a:hover, .register-account a:hover {
+    text-decoration: underline;
+}
 .options-container {
     text-align: center;
 }

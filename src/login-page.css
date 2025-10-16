@@ -4,11 +4,19 @@
     --brown: #8C490D;
 }
 
+body {
+    background-color: var(--brown);
+}
 
 .main-content {
     display: flex;
     background-color: var(--brown);
 }
+
+.logo-title-contaiter .title {
+    margin-left: 100px;
+}
+
 .logo .leg {
     height: 563px;
     width: 821px;
@@ -25,6 +33,11 @@
     border-radius: 30px 0px 0px 30px
 }
 
+.login-wrapper {
+    margin-top: 150px;
+    width: 70%;
+}
+
 .login-container .login-title, .login-container .form-container, .login-container .options-container {
     margin-left: 50px;
     margin-right: 50px;
@@ -33,10 +46,11 @@
 h1 {
     color: var(--orange);
     font-size: 64px;
-
-    margin-top: 150px;
 }
 
+.form-container {
+    margin-top: 100px;
+}
 
 .form-container fieldset {
     border: none;
@@ -51,7 +65,6 @@ h1 {
 .form-container label, .form-container input {
     display: block;
     width: 100%;
-    
     color: var(--orange);
     border-color: var(--orange);
 

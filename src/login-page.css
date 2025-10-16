@@ -13,24 +13,34 @@ body {
     background-color: var(--brown);
 }
 
-.logo-title-contaiter .title {
-    margin-left: 100px;
+.logo-title-wrapper {
+    position: relative;
 }
 
-.logo .leg {
-    height: 563px;
-    width: 821px;
+.logo {
+    position: absolute;
+    left: -400px;
 }
 
-.logo .foot {
-    height: 314px;
-    width: 394px;
+.logo img {
+    width: 1320px;
+    height: 1000px;
+    transform: rotate(10deg);
+}
+
+.title {
+    position: fixed;
+    bottom:20px;
+    left: 100px;
 }
 
 .login-container {
     background-color: white;
     width: 50%;
-    border-radius: 30px 0px 0px 30px
+    height: 100%;
+    border-radius: 30px 0px 0px 30px;
+    position: fixed;
+    right: 0;
 }
 
 .login-wrapper {

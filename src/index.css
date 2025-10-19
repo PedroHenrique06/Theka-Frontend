@@ -1,0 +1,11 @@
+.nav-container {
+    display: flex;
+    padding: 10px 20px;
+    width: 700px;
+    margin: auto;
+    
+    align-items: center;
+    justify-content: space-between;
+
+    color: #5A5A5A;
+}

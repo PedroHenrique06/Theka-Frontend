@@ -1,10 +1,10 @@
-# Theka-Frontend
+# Theka-Frontend 📚🌐
 
-## Descrição
+## Descrição 
 
 Este projeto é referente ao 'Desafio Trainee' da EJECT.
 
-## Progresso do Desafio
+## Progresso do Desafio 🔨
 
 - [x] Tela login
 - [x] Tela cadastro

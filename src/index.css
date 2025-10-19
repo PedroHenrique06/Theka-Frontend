@@ -9,3 +9,54 @@
 
     color: #5A5A5A;
 }
+
+.footer-container {
+    background-color: #81013A;
+    color: white;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 150px;
+    width: 100%;
+    
+    position: fixed;
+    bottom: 0;
+}
+
+.footer-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.footer-image img {
+    text-align: center;
+}
+
+.footer-container h2 {
+    font-size: 40px;
+}
+
+.footer-container ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.footer-container li {
+    display: flex;
+    align-items: center;
+}
+
+.footer-container ul li {
+    margin-bottom: 5px;
+    padding: 3px;
+    gap: 10px
+}
+
+.footer-container span {
+    font-size: 18px;
+}

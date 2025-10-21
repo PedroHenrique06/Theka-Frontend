@@ -56,7 +56,7 @@ body {
 
 h1 {
     color: var(--orange);
-    font-size: 64px;
+    font-size: 4rem;
 }
 
 .form-container {
@@ -68,7 +68,7 @@ h1 {
 }
 
 .form-container label {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
 }
 
@@ -93,7 +93,7 @@ h1 {
 .forgotten-password a, .register-account a {
     font-weight: bold;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 1.1rem;
 
     color: var(--orange);
 }
@@ -120,7 +120,7 @@ h1 {
     background-color: var(--orange);
     
     font-weight: 800;
-    font-size: 16px;
+    font-size: 1rem;
 
     border: none;
     border-radius: 100px;

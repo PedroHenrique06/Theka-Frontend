@@ -30,13 +30,13 @@ body {
 
 .title {
     position: fixed;
-    bottom:20px;
+    bottom: 20px;
     left: 100px;
 }
 
 .login-container {
     background-color: white;
-    
+
     width: 50%;
     height: 100%;
     border-radius: 30px 0px 0px 30px;
@@ -49,7 +49,9 @@ body {
     width: 70%;
 }
 
-.login-container .login-title, .login-container .form-container, .login-container .options-container {
+.login-container .login-title,
+.login-container .form-container,
+.login-container .options-container {
     margin-left: 50px;
     margin-right: 50px;
 }
@@ -73,11 +75,12 @@ h1 {
 }
 
 /* Ajustes para que o rótulo e o campo de texto fiquem em linhas diferentes */
-.form-container label, .form-container input {
+.form-container label,
+.form-container input {
     display: block;
     width: 100%;
     margin-bottom: 10px;
-    
+
     color: var(--orange);
     border-color: var(--orange);
 
@@ -85,12 +88,13 @@ h1 {
 
 .form-container input {
     border-radius: 100px;
-    border: 1px solid; 
+    border: 1px solid;
 
     padding: 10px 20px;
 }
 
-.forgotten-password a, .register-account a {
+.forgotten-password a,
+.register-account a {
     font-weight: bold;
     text-decoration: none;
     font-size: 1.1rem;
@@ -98,14 +102,17 @@ h1 {
     color: var(--orange);
 }
 
-.forgotten-password a:hover, .register-account a:hover {
+.forgotten-password a:hover,
+.register-account a:hover {
     text-decoration: underline;
 }
+
 .options-container {
     text-align: center;
 }
 
-.forgotten-password, .register-account {
+.forgotten-password,
+.register-account {
     margin-bottom: 10px;
 }
 
@@ -118,7 +125,7 @@ h1 {
 .enter-button button {
     color: white;
     background-color: var(--orange);
-    
+
     font-weight: 800;
     font-size: 1rem;
 
@@ -126,4 +133,98 @@ h1 {
     border-radius: 100px;
 
     padding: 10px 20px;
+}
+
+@media (max-width: 500px) {
+
+    body {
+        background-color: white;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .logo-title-wrapper {
+        position: static;
+        margin-bottom: 30px;
+    }
+
+    .logo {
+        position: relative;
+        left: -200px;
+    }
+
+    .logo img {
+        height: 200px;
+        width: 580px;
+    }
+
+    .title {
+        display: none;
+    }
+
+    .login-container {
+        width: 100%;
+        height: 100%;
+        
+        border-radius: 15px 15px 0px 0px;
+        position: static;
+        padding-bottom: 20px;
+    }
+
+    .login-wrapper {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .login-container .login-title,
+    .login-container .form-container,
+    .login-container .options-container {
+        margin-left: 20px;
+        margin-right: 20px;;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .form-container {
+        margin-top: 10px;
+    }
+
+    .form-container label {
+        font-size: 1rem;
+    }
+
+    .form-container input {
+        padding: 5px 5px;
+    }
+
+    .forgotten-password a,
+    .register-account a {
+        font-size: 0.8rem;
+    }
+
+    .options-container {
+        text-align: center;
+    }
+
+    .forgotten-password,
+    .register-account {
+        margin-bottom: 10px;
+    }
+
+    .enter-button {
+        text-align: center;
+        margin-right: 0px;
+    }
+
+    /* Estilização do botão de entrar */
+    .enter-button button {
+        font-size: 0.8rem;
+        margin-top: 10px;
+    }
 }

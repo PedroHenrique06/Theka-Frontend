@@ -5,6 +5,7 @@
 }
 
 body {
+    overflow: hidden;
     background-color: var(--brown);
 }
 
@@ -135,7 +136,32 @@ h1 {
     padding: 10px 20px;
 }
 
-@media (max-width: 500px) {
+/* Notebook: 1400 x 770 */
+@media (min-width: 1300px) and (max-width: 1500px) {
+    body {
+        overflow: hidden;
+    }
+
+    .logo {
+        left: -300px;
+    }
+
+    .logo img {
+        height: 700px;
+        width: 950px;
+        transform: rotate(10deg);
+    }
+
+    .title {
+        position: fixed;
+        bottom: 20px;
+        left: 100px;
+    }
+
+}
+
+/* Smartphone: 320 x 570 */
+@media (max-width: 450px) {
 
     body {
         background-color: white;
@@ -169,7 +195,7 @@ h1 {
     .login-container {
         width: 100%;
         height: 100%;
-        
+
         border-radius: 15px 15px 0px 0px;
         position: static;
         padding-bottom: 20px;
@@ -184,7 +210,7 @@ h1 {
     .login-container .form-container,
     .login-container .options-container {
         margin-left: 20px;
-        margin-right: 20px;;
+        margin-right: 20px;
     }
 
     h1 {
@@ -193,6 +219,7 @@ h1 {
 
     .form-container {
         margin-top: 10px;
+        width: 85%;
     }
 
     .form-container label {

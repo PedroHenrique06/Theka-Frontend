@@ -10,7 +10,10 @@ Este projeto é referente ao 'Desafio Trainee' da EJECT.
 - [x] Tela cadastro
 - [x] Tela de recuperação de senha
 - [x] Tela de redefinição de senha
-- [ ] Responsividade de login, cadastro e rec/red de senha
+- [ ] Responsividade da tela de login
+- [ ] Responsividade da tela de cadastro
+- [ ] Responsividade da tela recuperação de senha
+- [ ] Responsividade da tela de redefinição de senha
 - [x] Navbar/Menu
 - [x] Footer/Rodapé
 - [ ] Página Home

@@ -7,6 +7,7 @@
 body {
     overflow: hidden; 
     background-color: var(--brown);
+    margin: 0;
 }
 
 .main-content {
@@ -14,6 +15,7 @@ body {
     background-color: var(--brown);
 }
 
+/* Estilização do container com imagem (logo) e titulo (logo) */
 .logo-title-wrapper {
     position: relative;
 }
@@ -35,6 +37,7 @@ body {
     left: 100px;
 }
 
+/* Estilização do conteiner com o formulário de login */
 .login-container {
     background-color: white;
 
@@ -75,7 +78,7 @@ h1 {
     font-weight: 700;
 }
 
-/* Ajustes para que o rótulo e o campo de texto fiquem em linhas diferentes */
+/* Estilizção dos campos e caixas do formulário */
 .form-container label,
 .form-container input {
     display: block;
@@ -94,6 +97,11 @@ h1 {
     padding: 10px 20px;
 }
 
+.options-container {
+    text-align: center;
+}
+
+/* Estilização dos links */
 .forgotten-password a,
 .register-account a {
     font-weight: bold;
@@ -106,10 +114,6 @@ h1 {
 .forgotten-password a:hover,
 .register-account a:hover {
     text-decoration: underline;
-}
-
-.options-container {
-    text-align: center;
 }
 
 .forgotten-password,
@@ -136,6 +140,10 @@ h1 {
     padding: 10px 20px;
 }
 
+.enter-button button:hover {
+    background-color: #c56816;
+}
+
 /* Notebook: 1400 x 770 */
 @media (min-width: 1300px) and (max-width: 1500px) {
     body {
@@ -149,7 +157,6 @@ h1 {
     .logo img {
         height: 700px;
         width: 950px;
-        transform: rotate(10deg);
     }
 
     .title {
@@ -167,12 +174,14 @@ h1 {
         background-color: white;
     }
 
+    /* Alinhamento dos items na vertical */
     .main-content {
         display: flex;
         flex-direction: column;
         overflow: hidden;
     }
 
+    /* Ajustes no container do logo */
     .logo-title-wrapper {
         position: static;
         margin-bottom: 30px;
@@ -192,6 +201,7 @@ h1 {
         display: none;
     }
 
+    /* Ajustes no container do formulário de login */
     .login-container {
         width: 100%;
         height: 100%;
@@ -230,6 +240,7 @@ h1 {
         padding: 5px 5px;
     }
 
+    /* Ajustes na estilização dos links */
     .forgotten-password a,
     .register-account a {
         font-size: 0.8rem;
@@ -244,12 +255,12 @@ h1 {
         margin-bottom: 10px;
     }
 
+    /* Estilização do botão de entrar */
     .enter-button {
         text-align: center;
         margin-right: 0px;
     }
 
-    /* Estilização do botão de entrar */
     .enter-button button {
         font-size: 0.8rem;
         margin-top: 10px;

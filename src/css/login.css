@@ -50,7 +50,7 @@ body {
 
 .login-wrapper {
     margin-top: 150px;
-    width: 70%;
+    width: 80%;
 }
 
 .login-container .login-title,
@@ -67,10 +67,7 @@ h1 {
 
 .form-container {
     margin-top: 100px;
-}
-
-.form-container fieldset {
-    border: none;
+    max-width: 100%;
 }
 
 .form-container label {
@@ -82,6 +79,8 @@ h1 {
 .form-container label,
 .form-container input {
     display: block;
+    box-sizing: border-box;
+    
     width: 100%;
     margin-bottom: 10px;
 
@@ -97,8 +96,31 @@ h1 {
     padding: 10px 20px;
 }
 
+.password-container {
+    width: 100%;
+}
+
+.password-icon-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 100%;
+}
+
+.password-icon-container input {
+    padding-right: 40px;
+}
+
+.password-icon-container img {
+    position: absolute;
+    right: 0;
+    padding: 0px 10px 10px 0px;
+}
+
 .options-container {
     text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 /* Estilização dos links */

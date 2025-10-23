@@ -6,6 +6,7 @@
 
 body {
     background-color: var(--brown);
+    overflow: hidden;
 }
 
 .main-content {
@@ -120,7 +121,7 @@ h1 {
 }
 
 /* Estilização do botão de entrar */
-.enter-button button {
+.save-button button {
     color: white;
     background-color: var(--orange);
     
@@ -132,4 +133,110 @@ h1 {
 
     padding: 10px 20px;
     margin-right: 20px;
+}
+
+/* Responsividade: smartphone */
+@media (max-width: 400px) {
+    body {
+        margin: 0;
+        background-color: white;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .logo-title-wrapper {
+        position: static;
+        height: 100%;
+        width: 100%;
+    }
+
+    .logo {
+        position: relative;
+        left: -50px;
+        top: 0;
+    }
+
+    .logo img {
+        height: 300px;
+        width: 580px;
+    }
+
+    .title {
+        display: none;
+    }
+
+    .signup-container {
+        background-color: white;
+        
+        width: 100%;
+        height: 100%;
+        padding-bottom: 30px;
+
+        border-radius: 15px 15px 0px 0px;
+        position: static;
+    }
+
+    .logo-title-wrapper, .signup-wrapper {
+        position: static;
+    }
+
+    .signup-wrapper {
+        margin: 0px;
+        width: 100%;
+    }
+
+    .signup-container .signup-title, .signup-container .form-container, .login-container .options-container {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    h1 {
+        width: 100%;
+        font-size: 1.7rem;
+    }
+
+    .form-container {
+        margin-top: 0px;
+        width: 85%;
+    }
+
+    .form-container fieldset {
+        padding: 0px;
+    }
+
+    .form-container label {
+        font-size: 1rem;
+    }
+
+    /* Ajustes para que o rótulo e o campo de texto fiquem em linhas diferentes */
+    .form-container label, .form-container input {
+        margin-bottom: 10px;
+    }
+
+    .form-container input {
+        padding: 5px 10px;
+    }
+
+    .buttons-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;   
+    }
+
+    /* Estilização do botão de cancelar */
+    .cancel-button button {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+    }
+
+    /* Estilização do botão de entrar */
+    .save-button button {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+    }
 }

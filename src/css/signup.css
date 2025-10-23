@@ -58,7 +58,7 @@ body {
 
 .signup-wrapper {
     margin-top: 150px;
-    width: 70%;
+    width: 80%;
 }
 
 .signup-container .signup-title, .signup-container .form-container, .login-container .options-container {
@@ -73,10 +73,7 @@ h1 {
 
 .form-container {
     margin-top: 100px;
-}
-
-.form-container fieldset {
-    border: none;
+    max-width: 100%;
 }
 
 .form-container label {
@@ -85,13 +82,17 @@ h1 {
 }
 
 /* Estilizção dos campos e caixas do formulário */
-.form-container label, .form-container input {
+.form-container label,
+.form-container input {
     display: block;
+    box-sizing: border-box;
+    
     width: 100%;
+    margin-bottom: 10px;
+    
     color: var(--orange);
     border-color: var(--orange);
 
-    margin-bottom: 10px;
 }
 
 .form-container input {
@@ -105,11 +106,33 @@ h1 {
     color: var(--orange);
 }
 
+.password-container, .password-confirmation-container {
+    width: 100%;
+}
+
+.password-icon-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 100%;
+}
+
+.password-icon-container img {
+    position: absolute;
+    right: 0;
+    padding: 0px 10px 10px 0px;
+}
+
+.password-icon-container input {
+    padding-right: 40px;
+}
+
 .buttons-container {
     display: flex;
     justify-content: end;
     gap: 10px;
-    margin-top: 20px;   
+    margin-top: 20px;
+    margin-right: 50px; 
 }
 
 /* Estilização do botão de cancelar */
@@ -142,7 +165,6 @@ h1 {
     border-radius: 100px;
 
     padding: 10px 20px;
-    margin-right: 20px;
 }
 
 .save-button button:hover {

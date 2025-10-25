@@ -61,7 +61,7 @@ body {
     width: 80%;
 }
 
-.signup-container .signup-title, .signup-container .form-container, .login-container .options-container {
+.signup-container .signup-title, .signup-container .form-container{
     margin-left: 50px;
     margin-right: 50px;
 }

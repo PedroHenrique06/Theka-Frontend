@@ -1,0 +1,52 @@
+/* Estilização do corpo do site */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Evita que o conteúdo principal fique sobreposto */
+main {
+    flex: 1;
+    margin: auto
+}
+
+/* Estilização da variante do cabeçalho */
+header {
+    background-color: #BF0259;
+}
+
+.nav-container .img-container {
+    box-shadow: inset 0 0px 15px rgb(255, 255, 255, 0.2);
+}
+
+.nav-container .menu-container {
+    box-shadow: inset 0 0px 15px rgb(255, 255, 255, 0.2);
+}
+
+.nav-container a {
+    color: white;
+}
+
+.image-presentation-container {
+    background-color: #BF0259;
+    display: flex;
+    align-items: center;
+    /* justify-content: left; */
+}
+
+.presentation-container {
+    background-color: chocolate;
+    display: inline-block;
+    text-align: left;
+    width: fit-content;
+}
+
+.title-logo-container {
+    
+}
+
+.info-container {
+    background-color: green;
+}

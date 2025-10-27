@@ -1,0 +1,163 @@
+/* Definição de variáveis globais */
+:root {
+    --purple: #81013A;
+    --font-family: 'Inter', sans-serif;
+}
+
+/* Estilização do corpo do site */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Evita que o conteúdo principal fique sobreposto */
+main {
+    flex: 1;
+    margin: auto
+}
+
+.title {
+    font-size: 4rem;
+    color: var(--purple);
+}
+
+/* Estilização do container que contém o mapa e o formulário */
+.map-form-container {
+    display: flex;
+    flex-direction: row;
+
+    border-radius: 10px;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+
+    background-color: #F8F8F8;
+}
+
+.map-container {
+    width: 100%;
+}
+
+.map-container img {
+    max-width: 100%;
+}
+
+.map-buttons-address-container .buttons-container {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.map-buttons-address-container .buttons-container button{
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-style: extra-bold;
+    font-size: 1rem;
+
+    border-radius: 100px;
+    border-style: none;
+    padding: 10px 20px 10px 20px;
+
+    color: white
+
+}
+
+.Natal-container button{
+    background-color: var( --purple);
+}
+
+.Midway-container button{
+    background-color: #7E7E7D;
+}
+
+.address-container {
+    box-sizing: border-box;
+    max-width: 90%;
+    margin-left: 20px;
+    
+    font-family: var(--font-family);
+    font-size: 0.9rem;
+    font-weight: 300;
+    font-style: light;
+    color: #393939
+}
+
+/* Estilização do formulário */
+.form-container {
+    box-sizing: border-box;
+    padding: 20px 40px 20px 40px;
+}
+
+.form-container label,
+.form-container input {
+    display: block;
+    box-sizing: border-box;
+    
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.form-container h3 {
+    color: var( --purple);
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.form-container label {
+    color: var( --purple);
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-style: bold;
+}
+
+.form-container input, .form-container button {
+    padding: 10px 20px 10px 20px;
+    border-radius: 100px;
+}
+
+/* Estilização dos botões */
+.form-container .buttons-container {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: flex-end;
+
+    margin-bottom: 10px;
+}
+
+.cancel-button button {
+    color: var( --purple);
+    background: white;
+    border: 2px solid var( --purple);
+}
+
+.send-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.send-button button {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: 10px;
+
+    color: white;
+    background: var( --purple);
+    border: 2px solid var( --purple);
+}
+
+.send-button img {
+    width: 15px;
+    height: 15px;
+}
+
+.cancel-button button, .send-button button {
+    font-style: extra-bold;
+    font-weight: 800;
+}

@@ -44,9 +44,8 @@ header {
     width: fit-content;
 }
 
-/* Revisitar esse container futuramente para ajustar o tamanho do texto a imagem */
 .info-container {
-    width: 490px;
+    max-width: 490px;
 }
 
 .info-container p {
@@ -54,4 +53,48 @@ header {
     color: white;
     width: auto;
     max-width: 100%;
+}
+
+.history-image-container {
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+} 
+
+.history-image-wrapper {
+    display: flex;
+    gap: 150px;
+    border-radius: 10px;
+    padding: 0px 50px 0px 50px;
+    
+    background-color: #A1D54A;
+}
+
+.history-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+.history-image-wrapper h1 {
+    font-size: 4rem;
+    font-style: bold;
+    font-weight: 700;
+    font-family: 'DM Sans', sans-serif;;
+
+    color: #111A04;
+
+    max-width: fit-content;
+}
+
+.history-image-wrapper p {
+    font-size: 1.1rem;
+    font-style: regular;
+    font-weight: 400;
+    font-family:'Inter', sans-serif;
+
+    color: #111A04;
+
+    max-width: 550px;
 }

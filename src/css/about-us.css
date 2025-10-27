@@ -9,7 +9,6 @@ html, body {
 /* Evita que o conteúdo principal fique sobreposto */
 main {
     flex: 1;
-    margin: auto
 }
 
 /* Estilização da variante do cabeçalho */
@@ -29,24 +28,30 @@ header {
     color: white;
 }
 
+/* Estilização do container contendo a imagem e o texto de apresentação */
 .image-presentation-container {
     background-color: #BF0259;
     display: flex;
     align-items: center;
-    /* justify-content: left; */
+    gap: 100px;
 }
 
 .presentation-container {
-    background-color: chocolate;
-    display: inline-block;
-    text-align: left;
-    width: fit-content;
+    display: block;
 }
 
 .title-logo-container {
-    
+    width: fit-content;
 }
 
+/* Revisitar esse container futuramente para ajustar o tamanho do texto a imagem */
 .info-container {
-    background-color: green;
+    width: 490px;
+}
+
+.info-container p {
+    font-size: 1.1rem;
+    color: white;
+    width: auto;
+    max-width: 100%;
 }

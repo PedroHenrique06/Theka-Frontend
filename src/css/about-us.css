@@ -9,6 +9,7 @@ html, body {
 /* Evita que o conteúdo principal fique sobreposto */
 main {
     flex: 1;
+    margin: auto 0 ;
 }
 
 /* Estilização da variante do cabeçalho */
@@ -28,9 +29,8 @@ header {
     color: white;
 }
 
-/* Estilização do container contendo a imagem e o texto de apresentação */
+/* Estilização do container de apresentação */
 .image-presentation-container {
-    background-color: #BF0259;
     display: flex;
     align-items: center;
     gap: 100px;

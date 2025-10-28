@@ -55,6 +55,7 @@ header {
     max-width: 100%;
 }
 
+/* Estilização do banner 'nossa história' */
 .history-image-container {
     display: flex;
     justify-content: center;
@@ -97,4 +98,74 @@ header {
     color: #111A04;
 
     max-width: 550px;
+}
+
+/* Estilização do banner 'Nossos valores' */
+.title-container {
+    color: #81013A;
+}
+
+.values-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 100px;
+}
+
+.values-container h2 {
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.access-for-all-container, .love-for-literature-container, .comunity-and-exchange-container {
+    border-radius: 10px;
+}
+
+.access-for-all-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+    max-width: 387px;
+    width: 387px;
+    max-height: 266px;
+    height: 266px;
+
+    color: #81013A;
+    background-color: #F8C200;
+}
+
+.access-for-all-container img {
+    display: block;
+    align-self: flex-end;
+}
+
+.access-for-all-container .image-container {
+    text-align: right;
+}
+
+.love-for-literature-container {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 387px;
+    width: 387px;
+    max-height: 266px;
+    height: 266px;
+
+    color: #F78520;
+    background-color: #A1D54A;
+}
+
+.comunity-and-exchange-container {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 387px;
+    /* width: 387px; */
+    max-height: 266px;
+    /* height: 266px; */
+
+    color: #F78520;
+    background-color: #BF0259;
 }

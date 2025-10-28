@@ -55,6 +55,37 @@ header {
     max-width: 100%;
 }
 
+/* Estilização das tags */
+.menu-tags-container {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none; 
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    
+    margin-top: 20px;
+    gap: 20px;
+    max-width: 100%;
+}
+
+.tag {
+    font-size:  1.5rem;
+    font-weight: 700;
+    font-family: 'Inter', 'sans-serif';
+    font-style: bold;
+
+    border-radius: 100px;
+    padding: 10px 20px 10px 20px;
+    min-width: auto;
+    flex-shrink: 0;
+    cursor: pointer;
+    scroll-behavior: smooth;
+
+    color: #48001D;
+    border: 3px solid #48001D;
+}
+
+
 /* Estilização do banner 'nossa história' */
 .history-image-container {
     display: flex;

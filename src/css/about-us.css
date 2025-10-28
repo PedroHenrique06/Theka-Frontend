@@ -17,6 +17,7 @@ main {
 /* Estilização da variante do cabeçalho */
 header {
     background-color: #BF0259;
+    border-radius: 0px 0px 10px 10px;
 }
 
 .nav-container .img-container {

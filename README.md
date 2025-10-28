@@ -21,8 +21,6 @@ Este projeto é referente ao 'Desafio Trainee' da EJECT.
 - [ ] Destaques (Home)
 - [ ] Estatísticas (Home)
 - [ ] Página de Acervo da biblioteca
-- [ ] Página Sobre Nós
-- [ ] Página Contato 
-
-Obs.: Lista incompleta.
+- [x] Página Sobre Nós
+- [x] Página Contato 
 

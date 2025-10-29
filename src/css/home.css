@@ -70,7 +70,8 @@ main {
 }
 
 /* Estilização do container de ver mais e carrossel*/
-.know-more-carousel-container {
+.know-more-book-stack-container {
+    display: flex;
     margin: 50px auto;
     width: 1190px;
 }
@@ -83,7 +84,7 @@ main {
     margin-left: 20px;
 }
 
-.know-more-carousel-container h1 {
+.know-more-book-stack-container h1 {
     font-size: 4rem;
     font-weight: 700;
     font-style: bold;
@@ -118,6 +119,61 @@ main {
 
 .highlight-container span, .complete-collection-container span {
     margin-right: 10px;
+}
+
+/* Estilização do container 'pilha de livros (book stack) */
+.book-stack-container {
+    margin: auto;
+}
+
+.book-stack {
+    position: relative;
+    
+    width: 500px;
+    height: 680px;
+}
+
+/* Estilização dos containers dos livros individuais */
+.book-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.book-cover-container {
+    position: relative;
+}
+
+.book-cover-container img {
+    border-radius: 20px;
+}
+
+.book-cover-container .arrow-icon {
+    position: absolute;
+
+    right: 20px;
+    top: 20px;
+}
+
+.book-cover {
+    border-radius: 20px;
+}
+
+/* Organização das camadas da pilha */
+.back {
+    z-index: 1;
+}
+
+.middle {
+    transform: rotate(7.4deg);
+    z-index: 2;
+}
+
+.front {
+    transform: rotate(-3.4deg);
+    z-index: 3;
+    top: 20px;
+
 }
 
 /* Estilização da sessão de estatísticas */

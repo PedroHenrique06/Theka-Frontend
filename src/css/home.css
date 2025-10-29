@@ -69,3 +69,55 @@ main {
     right: -350px;
 }
 
+/* Estilização do container de ver mais e carrossel*/
+.know-more-carousel-container {
+    margin: 50px auto;
+    width: 1190px;
+}
+
+.know-more-container {
+    width: 50%;
+}
+
+.icon-container {
+    margin-left: 20px;
+}
+
+.know-more-carousel-container h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    font-style: bold;
+
+    color: #81013A;
+}
+
+.text-container p {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+/* Estilização dos botões */
+.highlight-container button, .complete-collection-container button {
+    display: flex;
+
+    border-radius: 100px;
+    padding: 10px 20px;
+    border: 2px solid #81013A;
+
+    color: #81013A;
+    background-color: white;
+
+    font-size: 1rem;
+    font-weight: 800;
+    font-style: extra bold;
+}
+
+.highlight-container, .complete-collection-container {
+    margin-bottom: 10px;
+}
+
+.highlight-container span, .complete-collection-container span {
+    margin-right: 10px;
+}
+
+

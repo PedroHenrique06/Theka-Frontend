@@ -63,6 +63,10 @@ main {
     bottom: 50px;
 }
 
+.collection-button-container button:hover {
+    background-color: #c56816;
+}
+
 .mascot-img-container img {
     position: absolute;
     overflow: auto;
@@ -111,6 +115,10 @@ main {
     font-size: 1rem;
     font-weight: 800;
     font-style: extra bold;
+}
+
+.highlight-container button:hover, .complete-collection-container button:hover {
+    background-color: rgb(220, 220, 220);
 }
 
 .highlight-container, .complete-collection-container {

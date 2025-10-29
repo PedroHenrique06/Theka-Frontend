@@ -120,4 +120,63 @@ main {
     margin-right: 10px;
 }
 
+/* Estilização da sessão de estatísticas */
+.our-statistics-container h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    font-style: bold;
+
+    color: #81013A;
+}
+
+/* Estilização do conjunto primário de estatísticas */
+.increase-container {
+    display: flex;
+    flex-direction: row;
+
+    gap: 30px;
+
+    position: relative;
+}
+
+.increase-collection-container, .increase-lending-container {
+    width: fit-content;
+    position: relative;
+}
+
+.increase-collection-container .arrow-icon, .increase-lending-container .arrow-icon {
+    position: absolute;
+    right: 0;
+}
+
+/* Estilização do conteúdo interno dos conteiners */
+.data-container {
+    width: fit-content;
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
+}
+
+.data-container h1 {
+    font-family: 'DM Sans', sans-serif;
+    width: fit-content;
+    margin: 0;
+}
+
+.data-container span {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    font-style: light;
+}
+
+.increase-collection-container .data-container h1, .increase-collection-container .data-container span {
+    color: #2A3A0E;
+}
+
+.increase-lending-container .data-container h1,  .increase-lending-container .data-container span {
+    color: #5B2D05;
+}
+
+/* Estilização do conjunto secundário de estatísticas */
 

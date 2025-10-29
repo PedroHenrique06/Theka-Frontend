@@ -121,12 +121,23 @@ main {
 }
 
 /* Estilização da sessão de estatísticas */
+.our-statistics-container {
+    margin: 100px auto;
+}
+
 .our-statistics-container h1 {
     font-size: 4rem;
     font-weight: 700;
     font-style: bold;
 
     color: #81013A;
+}
+
+/* Estilização do envelopador dos containers de estatística */
+.increase-counters-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: flex-end;
 }
 
 /* Estilização do conjunto primário de estatísticas */
@@ -179,4 +190,49 @@ main {
 }
 
 /* Estilização do conjunto secundário de estatísticas */
+.counters-container {
+    display: flex;
+    width: fit-content;
+    gap: 20px;
+}
 
+/* Estilização dos conteiners */
+.counters-container div {
+    border-radius: 20px;
+    padding: 20px 40px;
+
+    position: relative;
+
+    background-color: #BF0259;
+}
+
+.counters-container h2 {
+    font-size: 3.1rem;
+    font-family: 'DM Sans', sans-serif;
+    
+    margin: 0;
+    margin-bottom: 30px;
+    padding: 0;
+
+    min-width: 145px;
+    
+    color: #FFC1CF;
+}
+
+.counters-container span {
+    font-size: 0.9rem;
+    font-weight: 300;
+    font-style: light;
+    font-family: 'Inter', sans-serif;
+
+    color: #FFC1CF;
+}
+
+/* Estilização dos ícones do container */
+.registerd-users-container img,
+.materials-catalog-container img,
+.registered-titles-container img {
+    position: absolute;
+    right: 20px;
+    top: 40px;
+}

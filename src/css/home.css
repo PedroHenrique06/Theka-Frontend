@@ -118,7 +118,7 @@ main {
 }
 
 .highlight-container button:hover, .complete-collection-container button:hover {
-    background-color: rgb(220, 220, 220);
+    background-color: rgb(230, 230, 230);
 }
 
 .highlight-container, .complete-collection-container {

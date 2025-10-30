@@ -186,7 +186,7 @@ span {
     max-width: 1190px;
 }
 
-.book-row-container {
+.book-rows-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 
@@ -200,20 +200,22 @@ span {
     align-items: center;
     justify-content: flex-end;
 
-    gap: 50px;
+    gap: 30px;
 }
 
-.pagination-item.active {
+.pagination-item, .arrow-left-container, .arrow-right-container {
+    width: 45px;
+    height: 45px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+}
 
-    width: 45px;
-    height: 45px;
+.pagination-item.active {
     border-radius: 100px;
 
     background-color: #81013A;
-    ;
 }
 
 .pagination-item.active h3 {

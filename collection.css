@@ -1,0 +1,73 @@
+/* Estilização do corpo do site */
+html, body {
+    height: 100%;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Evita que o conteúdo principal fique sobreposto */
+main {
+    flex: 1;
+    margin: auto;
+    max-width: 100%;
+}
+
+/* Estilização do container de novidades e carrossel*/
+.week-news-carousel-container {
+    display: flex;
+
+    margin: 50px auto;
+    width: 1190px;
+}
+
+/* Estilização dos títulos e texto do banner 'novidades da semana' */
+.week-news-container h1, h2, span {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-style: bold;
+}
+
+.week-news-container h1 {
+    font-size: 4rem;
+
+    max-width: 400px;
+    margin-bottom: 100px;
+    color: #81013A;
+}
+
+.week-news-container h2 {
+    font-size: 2rem;
+
+    margin-bottom: 10px;
+
+    color: #393939;
+}
+
+.week-news-container span {
+    font-size: 1rem;
+    color: #393939
+}
+
+/* Estilização do container do carrossel */
+.carousel-container {
+    /* TODO */
+}
+
+.book-cover-container {
+    position: relative;
+}
+
+.book-cover-container .arrow-icon {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+
+    width: 40px;
+}
+
+.book-cover-container img {
+    width: 300px;
+    border-radius: 15px;
+}

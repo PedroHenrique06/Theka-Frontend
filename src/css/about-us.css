@@ -92,6 +92,11 @@ header {
     border: 3px solid #48001D;
 }
 
+.tag:hover {
+    color: white;
+    background-color: #BF0259;
+}
+
 
 /* Estilização do banner 'Nossa história' */
 .history-image-container {

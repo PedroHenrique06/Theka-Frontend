@@ -71,3 +71,107 @@ main {
     width: 300px;
     border-radius: 15px;
 }
+
+
+/* Estilização da sessão de filtro e catálogo */
+.title-filter-catalog-container h1 {
+    font-size: 4rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-style: bold;
+
+    margin-bottom: 10px;
+
+    color: #81013A;
+}
+
+/* Estilização da barra de filtragem */
+.filter-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    gap: 20px;
+
+    border-radius: 100px;
+    border: 2px solid #81013A;
+}
+
+/* Estilização do container de pesquisa */
+.search-container {
+    width: 50%;
+
+    margin-left: 20px;
+}
+
+.search-container input {
+    padding: 10px 20px;
+
+    width: 100%;
+
+    border: none;
+}
+
+.search-container input::placeholder {
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-style: light;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Estilização do container de opções de filtro */
+.options-container {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    border-radius: 100px;
+    margin-right: 20px;
+}
+
+.options-container div {
+    font-size: 0.9rem;
+    font-weight: 300;
+    font-style: light;
+    font-family: 'Inter', sans-serif;
+
+    padding: 10px 20px;
+
+    border-radius: 100px;
+    border: 2px solid #81013A;
+    
+    color: #81013A;
+}
+
+.options-container .genre-container,
+.options-container .publisher-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    padding: 10px 15px;
+
+}
+
+.options-container .search-button-container {
+    background-color: #81013A;
+}
+
+.options-container .search-button-container  button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 0.9rem;
+    font-weight: 800;
+    font-style: extra bold;
+
+    color: white;
+    background-color: #81013A;
+    
+    border: none;
+}

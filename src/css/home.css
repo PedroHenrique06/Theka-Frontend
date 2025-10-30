@@ -84,6 +84,10 @@ main {
     width: 50%;
 }
 
+.know-more-container h1 {
+    margin-top: 20px;
+}
+
 .icon-container {
     margin-left: 20px;
 }

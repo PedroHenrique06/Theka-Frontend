@@ -21,6 +21,7 @@ main {
 
     margin: 50px auto;
     width: 1190px;
+    gap: 50px;
 }
 
 /* Estilização dos títulos e texto do banner 'novidades da semana' */
@@ -33,9 +34,10 @@ span {
 }
 
 .week-news-container h1 {
-    font-size: 4rem;
+    font-size: 5.5rem;
 
-    max-width: 400px;
+    max-width: 600px;
+    margin-top: 0;
     margin-bottom: 100px;
     color: #81013A;
 }
@@ -55,17 +57,42 @@ span {
 
 /* Estilização do container do carrossel */
 .carousel-container {
-    /* TODO */
+    display: flex;
+     gap: 10px;
 }
 
 .book-cover-container {
+    width: 80px;
+    height: 440px;
+
+    border-radius: 15px;
+
+    overflow: hidden;
     position: relative;
+}
+
+.book-cover-container .book-cover {
+    position: absolute;
+    left: -120px;
+    border-radius: 15px;
+}
+
+
+.book-cover-container.active {
+    width: 300px;
+}
+
+.book-cover-container.active .book-cover {
+    position: absolute;
+    left: 0;
 }
 
 .book-cover-container .arrow-icon {
     position: absolute;
     right: 20px;
     top: 20px;
+
+    z-index: 2;
 
     width: 40px;
 }
@@ -200,6 +227,7 @@ span {
     align-items: center;
     justify-content: flex-end;
 
+    margin-top: 30px;
     gap: 30px;
 }
 

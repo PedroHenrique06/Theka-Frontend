@@ -258,3 +258,84 @@ span {
 
     color: #CACAC9;
 }
+
+/* Estilização do modal de adição de material */
+.add-to-catalog-container {    
+    margin: 50px auto;
+    max-width: 1190px;
+}
+
+.add-to-catalog-container .title-container h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-style: bold;
+    font-family: 'DM Sans', sans-serif;
+
+    color: #81013A;
+}
+
+.book-cover-form-container {
+    gap: 50px;
+}
+
+/* Estilização do container da capa do livro */
+.book-cover-form-container .book-cover-container {
+    width: 300px;
+    height: 440px;
+
+    background-color: #A3A3A2;
+}
+
+.book-cover-form-container .book-cover-container img {
+    width: 60px;
+}
+
+.book-cover-form-container .book-cover-container button img {
+    width: 24px;
+}
+
+/* Estilização do container do formulário */
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    
+    gap: 20px;
+}
+
+.form-wrapper .title-pages-code-container,
+.form-wrapper .author-year-publisher-container,
+.form-wrapper .resume-container {
+    display: flex;
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    color: #81013A;
+}
+
+.form-wrapper .title-pages-code-container,
+.form-wrapper .author-year-publisher-container {
+    gap: 20px;
+}
+
+.form-wrapper .resume-container {
+    flex-direction: column;
+}
+
+.form-wrapper .resume-container input {
+    border-radius: 20px;
+    height: 130px;
+}
+.form-wrapper input {
+    padding: 10px 20px;
+    border-radius: 100px;
+    border: 2px solid #81013A;
+}
+
+.form-wrapper .title-container input,
+.form-wrapper .author-container input {
+    width: 420px;
+}
+
+.book-cover-form-container {
+    display: flex;
+}

@@ -260,7 +260,8 @@ span {
 }
 
 /* Estilização do modal de adição de material */
-.add-to-catalog-container {    
+.add-to-catalog-container {   
+    display: none; 
     margin: 50px auto;
     max-width: 1190px;
 }

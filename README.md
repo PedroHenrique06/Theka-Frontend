@@ -16,10 +16,12 @@ Este projeto é referente ao 'Desafio Trainee' da EJECT.
 - [x] Tela de redefinição de senha (responsiva) (only mobile)
 - [x] Navbar/Menu
 - [x] Footer/Rodapé
-- [X] Página Home
+- [x] Página Home
 - [ ] Página Home (responsiva)
-- [ ] Página de Acervo
+- [x] Página de Acervo
 - [ ] Página de Acervo (responsiva)
+- [ ] Modal 'adição' (Acervo)
+- [ ] Modal 'edição' (Acervo)
 - [x] Página Sobre Nós
 - [ ] Página Sobre Nós (responsiva)
 - [x] Página Contato 

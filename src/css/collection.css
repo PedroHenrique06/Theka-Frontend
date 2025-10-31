@@ -280,17 +280,24 @@ span {
 
 /* Estilização do container da capa do livro */
 .book-cover-form-container .book-cover-container {
-    width: 300px;
-    height: 440px;
+    width: 240px;
+    height: 345px;
+
+    position: relative;
 
     background-color: #A3A3A2;
 }
 
-.book-cover-form-container .book-cover-container img {
+.book-cover-form-container .book-cover-container .image-icon {
     width: 60px;
 }
 
-.book-cover-form-container .book-cover-container button img {
+.book-cover-form-container .book-cover-container button {
+    position: absolute;
+    bottom: 20px;
+}
+
+.book-cover-form-container .book-cover-container button .upload-icon {
     width: 24px;
 }
 
@@ -298,7 +305,7 @@ span {
 .form-wrapper {
     display: flex;
     flex-direction: column;
-    
+
     gap: 20px;
 }
 
@@ -334,6 +341,46 @@ span {
 .form-wrapper .title-container input,
 .form-wrapper .author-container input {
     width: 420px;
+}
+
+/* Estilização dos botões */
+.add-to-catalog-container .buttons-container {
+    display: flex;
+    justify-content: flex-end;
+
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.add-to-catalog-container .buttons-container button {
+    border-radius: 100px;
+
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-style: extra bold;
+}
+
+.add-to-catalog-container .buttons-container .cancel-button-container button {
+    padding: 10px 20px;
+
+    border: 2px solid #81013A;
+    color: #81013A;
+}
+
+.add-to-catalog-container .buttons-container .save-button-container button {
+    display: flex;
+    align-items: center;
+    
+    gap: 10px
+}
+
+.add-to-catalog-container .buttons-container .save-button-container button {
+    padding: 10px 20px;
+
+    border: 2px solid #81013A;
+    background-color: #81013A;
+    color: white;
 }
 
 .book-cover-form-container {

@@ -280,10 +280,13 @@ span {
 
 /* Estilização do container da capa do livro */
 .book-cover-form-container .book-cover-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
     width: 240px;
     height: 345px;
-
-    position: relative;
 
     background-color: #A3A3A2;
 }
@@ -297,11 +300,32 @@ span {
     bottom: 20px;
 }
 
+.book-cover-form-container .book-cover-container button {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+    border: none;
+    border-radius: 100px;
+    padding: 10px 15px;
+
+    font-size: 1rem;
+    font-weight: 800;
+    font-style: extra bold;
+
+    color: white;
+    background-color: #7E7E7D;
+}
+
 .book-cover-form-container .book-cover-container button .upload-icon {
     width: 24px;
 }
 
 /* Estilização do container do formulário */
+.form-container {
+    max-width: 75%;
+}
+
 .form-wrapper {
     display: flex;
     flex-direction: column;
@@ -328,10 +352,6 @@ span {
     flex-direction: column;
 }
 
-.form-wrapper .resume-container input {
-    border-radius: 20px;
-    height: 130px;
-}
 .form-wrapper input {
     padding: 10px 20px;
     border-radius: 100px;
@@ -340,7 +360,13 @@ span {
 
 .form-wrapper .title-container input,
 .form-wrapper .author-container input {
-    width: 420px;
+    width: 380px;
+}
+
+.form-wrapper .resume-container input {
+    max-width: 100%;
+    border-radius: 20px;
+    height: 130px;
 }
 
 /* Estilização dos botões */

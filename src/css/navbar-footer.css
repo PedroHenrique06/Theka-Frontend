@@ -106,3 +106,27 @@
 .footer-message span {
     font-size: 1rem;
 }
+
+/* Responsividade: smartphone (largura: 320px a 600px) */
+@media (min-width: 320px) and (max-width: 600px) {
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .footer-info-container {
+        flex-direction: column;
+
+        gap: 10px;
+        width: 100%;
+    }
+
+    .footer-contacts {
+        margin: 0;
+    }
+
+    .footer-container h2 {
+        margin: 0;
+    }
+}

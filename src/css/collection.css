@@ -259,7 +259,7 @@ span {
     color: #CACAC9;
 }
 
-/* Estilização do modal de adição de material */
+/* Estilização do modal de adição e edição de material */
 .add-to-catalog-container,
 .edit-catalog-container {   
     display: flex; 

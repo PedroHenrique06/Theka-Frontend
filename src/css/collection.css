@@ -270,6 +270,14 @@ span {
     border-radius: 20px;
 }
 
+.add-to-catalog-container {
+    display: none;
+}
+
+.edit-catalog-container {
+    display: none;
+}
+
 .add-to-catalog-container .title-container h2,
 .edit-catalog-container .title-container h2 {
     font-size: 2.5rem;

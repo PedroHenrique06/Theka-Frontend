@@ -1,7 +1,7 @@
 .nav-container {
     display: flex;
     align-items: center;
-    
+
     max-width: 900px;
     margin: auto;
     padding: 10px 20px;
@@ -13,7 +13,7 @@
 .menu-container {
     display: flex;
     justify-content: space-between;
-    
+
     border-radius: 100px;
     padding: 10px 20px;
     gap: 100px;
@@ -24,7 +24,7 @@
 /* Estilização dos links do menu */
 .menu-container a {
     text-decoration: none;
-    color: #5A5A5A ;
+    color: #5A5A5A;
 }
 
 .menu-container a:hover {
@@ -107,8 +107,8 @@
     font-size: 1rem;
 }
 
-/* Responsividade: smartphone (largura: 320px a 600px) */
-@media (min-width: 320px) and (max-width: 600px) {
+/* Responsividade: smartphone e tablet */
+@media (min-width: 320px) and (max-width: 900px) {
     .footer-container {
         display: flex;
         flex-direction: column;
@@ -128,5 +128,41 @@
 
     .footer-container h2 {
         margin: 0;
+    }
+}
+
+/* Responsividade: notebook*/
+@media (min-width: 901px) and (max-width: 1000px) {
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-info-container {
+        flex-direction: row;
+
+        gap: 20px;
+        width: 100%;
+    }
+
+    .footer-contacts {
+        margin: 0;
+    }
+
+    .footer-container h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Responsividade: notebook e PC */
+@media (min-width: 1001px) and (max-width: 1400px) {
+
+
+    .footer-info-container {
+        gap: 50px;
+    }
+
+    .footer-container h2 {
+        font-size: 1.8rem;
     }
 }

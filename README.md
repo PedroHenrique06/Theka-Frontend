@@ -28,3 +28,5 @@ Este projeto é referente ao 'Desafio Trainee' da EJECT.
 - [ ] Página Sobre Nós (responsiva)
 - [x] Página Contato 
 - [ ] Página Contato (responsiva)
+- [x] Footer (responsivo em intervalos)
+- [ ] Menu/navbar (responsivo em intervalos)

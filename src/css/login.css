@@ -37,7 +37,7 @@ body {
     left: 100px;
 }
 
-/* Estilização do conteiner com o formulário de login */
+/* Estilização do container com o formulário de login */
 .login-container {
     background-color: white;
 
@@ -75,7 +75,7 @@ h1 {
     font-weight: 700;
 }
 
-/* Estilizção dos campos e caixas do formulário */
+/* Estilização dos campos e caixas do formulário */
 .form-container label,
 .form-container input {
     display: block;
@@ -166,34 +166,11 @@ h1 {
     background-color: #c56816;
 }
 
-/* Notebook: 1400 x 770 */
-@media (min-width: 1300px) and (max-width: 1500px) {
-    body {
-        overflow: hidden;
-    }
-
-    .logo {
-        left: -300px;
-    }
-
-    .logo img {
-        height: 700px;
-        width: 950px;
-    }
-
-    .title {
-        position: fixed;
-        bottom: 20px;
-        left: 100px;
-    }
-
-}
-
 /* Responsividade: smartphone */
-@media (min-width: 320px) and (max-width: 800px) {
-
+@media (min-width: 320px) and (max-width: 900px) {
     body {
         background-color: white;
+        overflow-y: scroll;
     }
 
     /* Alinhamento dos items na vertical */
@@ -237,6 +214,8 @@ h1 {
     .login-wrapper {
         margin-top: 10px;
         width: 100%;
+        max-width: 500px;
+        margin: auto;
     }
 
     .login-container .login-title,
@@ -290,7 +269,7 @@ h1 {
     }
 }
 
-/* Ajustes na imagem em intervalos */
+/* Ajustes na imagem em intervalos de telas de até 900px*/
 @media (min-width: 401px) and (max-width: 500px){
     .logo img {
         height: 300px;
@@ -309,5 +288,61 @@ h1 {
     .logo img {
         height: 500px;
         width: 830px;
+    }
+}
+
+/* Responsividade: notebook e PC*/
+@media (min-width: 901px) and (max-width: 1850px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .logo {
+        left: -300px;
+    }
+
+    .logo img {
+        height: 650px;
+        width: 750px;
+    }
+
+    .title {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+    }
+}
+
+/* Ajustes na imagem em intervalos de telas de até 1850px*/
+@media (min-width: 1201px) and (max-width: 1400px){
+    .logo img {
+        height: 750px;
+        width: 850px;
+    }
+
+    .title {
+        left: 40px;
+    }
+}
+
+@media (min-width: 1401px) and (max-width: 1600px){
+    .logo img {
+        height: 800px;
+        width: 950px;
+    }
+
+    .title {
+        left: 40px;
+    }
+}
+
+@media (min-width: 1601px) and (max-width: 1850px){
+    .logo img {
+        height: 800px;
+        width: 1100px;
+    }
+
+    .title {
+        left: 60px;
     }
 }

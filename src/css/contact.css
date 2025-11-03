@@ -8,14 +8,20 @@
 html, body {
     height: 100%;
     margin: 0;
+
     display: flex;
     flex-direction: column;
+}
+
+header {
+    /* display: none; */
 }
 
 /* Evita que o conteúdo principal fique sobreposto */
 main {
     flex: 1;
-    margin: auto
+    margin: auto;
+    max-width: 100%;
 }
 
 .title {
@@ -36,7 +42,7 @@ main {
 }
 
 .map-container {
-    width: 100%;
+    max-width: 100%;
 }
 
 .map-container img {
@@ -169,4 +175,47 @@ main {
 .cancel-button button, .send-button button {
     font-style: extra-bold;
     font-weight: 800;
+}
+
+/* Responsividade: smartphone */
+@media (min-width: 320px) and (max-width: 900px) {
+
+    .title {
+        font-size: 2.5rem;
+
+    }
+
+    /* Estilização do container que contém o mapa e o formulário */
+    .map-form-container {
+        flex-direction: column;
+    }
+
+    .map-container {
+        margin: 0px 20px ;
+    }
+
+    .map-container img {
+        border-radius: 20px;
+    }
+
+    .map-buttons-address-container {
+        background-color: white;
+    }
+
+    .map-buttons-address-container .buttons-container {
+        flex-direction: column;
+    }
+
+    .form-container {
+        background-color: #F8F8F8;
+    }
+
+    .form-container h3 {
+        font-size: 1.2rem;
+    }
+
+    .form-container label {
+        font-size: 1.1rem;
+    }
+
 }

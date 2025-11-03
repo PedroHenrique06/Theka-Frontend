@@ -211,6 +211,8 @@ span {
     margin-top: 50px;
     margin-bottom: 50px;
     max-width: 1190px;
+
+    position: relative;
 }
 
 .book-rows-container {
@@ -219,6 +221,24 @@ span {
 
     column-gap: 20px;
     row-gap: 20px;
+}
+
+/* Estilização do botão de adicionar livro */
+.add-button-container {
+    width: fit-content;
+
+    position: absolute;
+    right: -50px;
+    top: 250px
+}
+
+.add-button-container button {
+    padding: 10px 20px;
+
+    border: 2px solid #81013A;
+    border-radius: 100px;
+    
+    background-color: #81013A;
 }
 
 /* Estilização de páginação */

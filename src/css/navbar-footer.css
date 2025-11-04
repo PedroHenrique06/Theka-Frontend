@@ -1,9 +1,10 @@
+/* Estilização do menu/navbar */
 .nav-container {
     display: flex;
     align-items: center;
 
-    max-width: 900px;
-    margin: auto;
+    max-width: 700px;
+    margin: 0 auto;
     padding: 10px 20px;
     border-radius: 100px;
     gap: 30px;
@@ -37,6 +38,7 @@
     box-shadow: inset 0 8px 15px rgba(0, 0, 0, 0.05);
 }
 
+/* Estilização do footer/rodapé */
 .footer-container {
     display: flex;
     flex-direction: column;
@@ -106,7 +108,7 @@
     font-size: 1rem;
 }
 
-/* Responsividade: smartphone e tablet */
+/* Responsividade do footer/rodapé: smartphone e tablet */
 @media (min-width: 320px) and (max-width: 900px) {
     .footer-container {
         display: flex;
@@ -130,7 +132,7 @@
     }
 }
 
-/* Responsividade: notebook*/
+/* Responsividade do footer/rodapé:: notebook*/
 @media (min-width: 901px) and (max-width: 1000px) {
     .footer-container {
         display: flex;
@@ -153,7 +155,7 @@
     }
 }
 
-/* Responsividade: notebook e PC */
+/* Responsividade do footer/rodapé: notebook e PC */
 @media (min-width: 1001px) and (max-width: 1400px) {
 
 

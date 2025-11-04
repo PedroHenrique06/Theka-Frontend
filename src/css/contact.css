@@ -13,9 +13,9 @@ html, body {
     flex-direction: column;
 }
 
-header {
+/* header {
     display: none;
-}
+} */
 
 /* Evita que o conteúdo principal fique sobreposto */
 main {
@@ -217,7 +217,7 @@ main {
     }
 }
 
-@media (min-width: 400px) {
+@media (min-width: 400px) and (max-width: 500px) {
     .form-container h3 {
         font-size: 1.5rem;
     }
@@ -237,7 +237,7 @@ main {
     }
 }
 
-@media (min-width: 901px) and (max-width: 1200px) {
+@media (min-width: 920px) and (max-width: 1200px) {
     .contact-form {
         margin-top: -50px;
         min-width: 350px;

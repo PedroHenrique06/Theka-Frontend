@@ -328,6 +328,7 @@ h1 {
     background-color: #003426;
 }
 
+/* Responsividade: smartphone */
 @media (min-width: 320px) and (max-width: 900px) {
      
     .image-presentation-container {
@@ -345,16 +346,20 @@ h1 {
     }
 
     .title-logo-container img {
+        margin-left: 15px;
         width: 200px;
     }
 
     .info-container p {
         font-size: 0.9rem;
         font-style: normal;
+        text-align: justify;
 
-        max-width: 420px;
+        max-width: 350px;
 
-        margin-bottom: 50px;
+        margin-left: 15px;
+        margin-right: 15px;
+        padding-bottom: 30px;
     }
 
     /* Estilização do banner 'Nossa história' */
@@ -371,7 +376,11 @@ h1 {
     }
 
     h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+    }
+
+    .info-history-container p {
+        text-align: justify;
     }
 
     .history-image-container .image-container {
@@ -381,8 +390,68 @@ h1 {
     .history-image-container .image-container img {
         width: auto;
         height: 100%;
-        max-height: 485px;
+        max-height: 360px;
         margin: auto;
         margin-bottom: 0;
     }
+
+    /* Estilização do container externo */
+    .values-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .our-values-container {
+        margin: auto;
+    }
+
+    .our-values-container .title-container h1 {        
+        width: 100%;
+        max-width: 550px;
+
+        margin: auto;
+        margin-bottom: 10px;
+    }
+
+    .values-container h3 {
+        font-size: 1.8rem;
+    }
+
+    /* Estilização dos containers internos */
+    .access-for-all-container, .love-for-literature-container, .comunity-and-exchange-container {
+        flex-direction: column;
+    }
+
+    .access-for-all-container {    
+        max-width: 350px;
+        margin: auto;
+    }
+
+    .love-for-literature-container {
+        max-width: 350px;
+        margin: auto;
+    }
+
+    .comunity-and-exchange-container {
+        max-width: 350px;
+        margin: auto;
+    }
+
+    /* Estilização da sessão 'Nossa equipe' */
+    .our-team-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .our-team-container .title-container h1 {
+        width: 100%;
+        max-width: 550px;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+
+    .team-container {
+        flex-direction: column; 
+        margin: auto;
+    }    
 }

@@ -5,6 +5,8 @@ html, body {
 
     display: flex;
     flex-direction: column;
+
+    overflow-x: hidden;
 }
 
 /* Evita que o conteúdo principal fique sobreposto */
@@ -18,6 +20,14 @@ main {
 header {
     background-color: #BF0259;
     border-radius: 0px 0px 10px 10px;
+}
+
+.nav-container {
+    display: none;
+}
+
+.nav-container-mobile {
+    display: flex;
 }
 
 .nav-container .img-container {
@@ -316,4 +326,63 @@ h1 {
 
 .member-container-4 .name-container {
     background-color: #003426;
+}
+
+@media (min-width: 320px) and (max-width: 900px) {
+     
+    .image-presentation-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+        position: relative;
+    }
+
+    .image-presentation-container .image-container img {
+        width: 700px;
+        margin-left: -80px;
+    }
+
+    .title-logo-container img {
+        width: 200px;
+    }
+
+    .info-container p {
+        font-size: 0.9rem;
+        font-style: normal;
+
+        max-width: 420px;
+
+        margin-bottom: 50px;
+    }
+
+    /* Estilização do banner 'Nossa história' */
+    .history-image-container {
+        display: flex;
+        flex-direction: column;
+        
+        gap: 0;
+        margin-bottom: 50px;
+    }
+
+    .history-container {
+        margin-bottom: 0;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .history-image-container .image-container {
+        transform: rotate(90deg);
+    }
+
+    .history-image-container .image-container img {
+        width: auto;
+        height: 100%;
+        max-height: 485px;
+        margin: auto;
+        margin-bottom: 0;
+    }
 }

@@ -1,4 +1,4 @@
-/* Estilização do menu/navbar */
+/* Estilização do menu */
 .nav-container {
     display: flex;
     align-items: center;
@@ -8,6 +8,12 @@
     padding: 10px 20px;
     border-radius: 100px;
     gap: 30px;
+}
+
+/* Estilização do sombreamento do container da imagem */
+.img-container {
+    border-radius: 100px;
+    box-shadow: inset 0 8px 15px rgba(0, 0, 0, 0.05);
 }
 
 /* Estilização do menu e do sombreamento container */
@@ -32,10 +38,34 @@
     text-decoration: underline;
 }
 
-/* Estilização do sombreamento do container da imagem */
-.img-container {
+/* Estilização do menu mobile */
+.nav-container-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+
+    gap: 20px;
+    
+    z-index: 100;
+
+    margin: 0 auto;
+}
+
+.logo-container {
+    padding: 10px 40px;
     border-radius: 100px;
-    box-shadow: inset 0 8px 15px rgba(0, 0, 0, 0.05);
+}
+
+.nav-container-mobile .img-container, .nav-container-mobile .logo-container {
+    border: solid 1px rgba(255, 255, 255, 0.419);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(2px);
 }
 
 /* Estilização do footer/rodapé */
@@ -108,7 +138,7 @@
     font-size: 1rem;
 }
 
-/* Responsividade do footer/rodapé: smartphone e tablet */
+/* Responsividade: smartphone e tablet */
 @media (min-width: 320px) and (max-width: 900px) {
     .footer-container {
         display: flex;
@@ -132,7 +162,7 @@
     }
 }
 
-/* Responsividade do footer/rodapé:: notebook*/
+/* Responsividade: notebook*/
 @media (min-width: 901px) and (max-width: 1000px) {
     .footer-container {
         display: flex;
@@ -155,7 +185,7 @@
     }
 }
 
-/* Responsividade do footer/rodapé: notebook e PC */
+/* Responsividade: notebook e PC */
 @media (min-width: 1001px) and (max-width: 1400px) {
 
 

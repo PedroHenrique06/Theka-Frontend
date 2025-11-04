@@ -27,6 +27,6 @@ Este projeto é referente ao 'Desafio Trainee' da EJECT.
 - [x] Modal 'edição' (Acervo)
 - [ ] MOdal 'edição' (acervo/responsivo)
 - [x] Página Sobre Nós
-- [ ] Página Sobre Nós (responsiva)
+- [x] Página Sobre Nós (responsiva)
 - [x] Página Contato 
 - [x] Página Contato (responsiva)

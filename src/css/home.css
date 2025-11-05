@@ -367,28 +367,45 @@ main {
     .know-more-book-stack-container {
         flex-direction: column;
         width: 100%;
-        max-width: 1190px;
     }
 
     .know-more-container {
+        display: flex;
+        flex-direction: column;
+        
         width: 100%;
+        max-width: 320px;
+     
+        margin: 0 auto;
     }
 
     .know-more-container h1 {
+        font-size: 1.7rem;
         margin-top: 20px;
-    }
+        margin-left: 10px;
+        margin-right: 10px;
 
-    .icon-container {
-        margin-left: 20px;
-    }
-
-    .know-more-book-stack-container h1 {
-        font-size: 3rem;
+        order: 1;
     }
 
     .text-container p {
-        font-size: 1.1rem;
-        font-weight: 400;
+        font-size: 0.9rem;
+        font-weight: 300;
+
+        margin-left: 10px;
+        margin-right: 10px;
+
+        order: 2;
+    }
+
+    .icon-container {
+        order: 3;
+        margin-top: 20px;
+    }
+
+    .icon-container img {
+        transform: rotate(90deg);
+        width: 50px;
     }
 
     /* Estilização dos botões */
@@ -400,17 +417,21 @@ main {
 
     /* Estilização do container 'pilha de livros (book stack) */
     .book-stack-container {
-        margin: auto;
-        max-width: 300px;
+        margin: 0 auto;
+        max-width: 250px;
         height: auto;
+
+        order: 4;
     }
 
     .book-stack {
-        margin: 50px auto;
+        margin: 40px auto;
+        height: 400px;
+
     }
 
     .book-item .book-cover {
-        width: 300px;
+        width: 250px;
     }
 
     .book-item .arrow-icon {
@@ -423,8 +444,8 @@ main {
         max-width: 600px;
     }
 
-    .our-statistics-container h1 {
-        font-size: 3rem;
+    .our-statistics-container .title-container h1 {
+        font-size: 2rem;
     }
 
     /* Estilização do envelopador dos containers de estatística */
@@ -468,10 +489,16 @@ main {
 
     /* Estilização do conteúdo interno dos conteiners */
     .data-container {
-        width: fit-content;
+        width: 100%;
+        max-width: 200px;
+
         position: absolute;
         bottom: 40px;
-        left: 20px;
+        left: 10px;
+    }
+
+    .data-container span {
+        font-size: 0.6rem;
     }
 
     /* Estilização do conjunto secundário de estatísticas */

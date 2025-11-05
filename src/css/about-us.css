@@ -362,11 +362,17 @@ h1 {
         padding-bottom: 30px;
     }
 
+    .tag {
+        font-size:  1rem;
+    }
+
     /* Estilização do banner 'Nossa história' */
     .history-image-container {
         display: flex;
         flex-direction: column;
         
+        max-width: 200px;
+
         gap: 0;
         margin-bottom: 50px;
     }
@@ -376,7 +382,7 @@ h1 {
     }
 
     h1 {
-        font-size: 2.2rem;
+        font-size: 1.7rem;
     }
 
     .info-history-container p {
@@ -390,7 +396,8 @@ h1 {
     .history-image-container .image-container img {
         width: auto;
         height: 100%;
-        max-height: 360px;
+        max-height: 300px;
+
         margin: auto;
         margin-bottom: 0;
     }
@@ -414,7 +421,7 @@ h1 {
     }
 
     .values-container h3 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     /* Estilização dos containers internos */
@@ -423,17 +430,29 @@ h1 {
     }
 
     .access-for-all-container {    
-        max-width: 350px;
+        max-width: 300px;
         margin: auto;
+    }
+
+    .access-for-all-container h3 {    
+        padding: 20px 0;
+    }
+
+    .access-for-all-container img {    
+        width: 250px;
     }
 
     .love-for-literature-container {
-        max-width: 350px;
+        max-width: 300px;
         margin: auto;
     }
 
+    .love-for-literature-container img {
+        width: 300px;
+    }
+
     .comunity-and-exchange-container {
-        max-width: 350px;
+        max-width: 300px;
         margin: auto;
     }
 

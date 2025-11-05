@@ -6,7 +6,7 @@
 
 body {
     background-color: var(--brown);
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .main-content {
@@ -248,7 +248,7 @@ h1 {
     }
 
     .form-container label {
-        font-size: 1rem;
+        font-size: 1.4rem;
     }
 
     .form-container label, .form-container input {

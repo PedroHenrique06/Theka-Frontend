@@ -3,6 +3,7 @@ html, body {
     height: 100%;
     margin: 0;
 
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
 }
@@ -332,13 +333,13 @@ main {
     }
 
     .title-text-container {
-        margin-left: 10x;
-        margin-top: 10px;
+        margin-left: 20px;
+        margin-top: 50px;
     }
 
     .title-text-container h3 {
         margin-top: 10px;
-        font-size: 2.5rem;
+        font-size: 1.7rem;
     }
 
     .banner-container .title-text-container img {
@@ -348,16 +349,17 @@ main {
     /* Estilização do botão do acervo */
     .collection-button-container button {
         position: static;
-        margin-left: 50px;
+        margin-left: 20px;
+        padding: 10px 15px;
     }
 
     .mascot-img-container img {
         position: absolute;
         overflow: auto;
-        right: -200px;
-        bottom: -20px;
+        right: -185px;
+        bottom: -10px;
 
-        width: 600px;
+        width: 500px;
         height: auto;
     }
 
@@ -439,24 +441,29 @@ main {
     .increase-container {
         display: flex;
         flex-direction: row;
+        position: relative;
 
         margin: auto;
         gap: 20px;
-
-        position: relative;
+        max-width: 320px;
 
         order: 2;
     }
 
+    .increase-container h1 {
+        font-size: 2rem;
+    }
+
     .increase-container img {
         width: 200px;
+        max-width: 100%;
     }
 
     .increase-collection-container .arrow-icon, .increase-lending-container .arrow-icon {
         position: absolute;
         right: 0;
 
-        width: 40px;
+        width: 30px;
     }
 
     /* Estilização do conteúdo interno dos conteiners */

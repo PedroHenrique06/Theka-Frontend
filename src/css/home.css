@@ -348,8 +348,9 @@ main {
         position: relative;
 
         border-radius: 20px;
-        margin: 50px auto;
+        margin: 50px 10px;
         width: 100%;
+        max-width: 300px;
         height: 550px;
     }
 
@@ -386,8 +387,11 @@ main {
 
     /* Estilização do container de ver mais e carrossel*/
     .know-more-book-stack-container {
+        display: flex;
         flex-direction: column;
         width: 100%;
+
+        margin: 20px auto;
     }
 
     .know-more-container {
@@ -401,10 +405,11 @@ main {
     }
 
     .know-more-container h1 {
-        font-size: 1.7rem;
+        font-size: 2rem;
         margin-top: 20px;
         margin-left: 10px;
         margin-right: 10px;
+        margin-bottom: 0;
 
         order: 1;
     }
@@ -413,6 +418,7 @@ main {
         font-size: 0.9rem;
         font-weight: 300;
 
+        margin-top: 5px;
         margin-left: 10px;
         margin-right: 10px;
 
@@ -426,14 +432,19 @@ main {
 
     .icon-container img {
         transform: rotate(90deg);
-        width: 50px;
+        width: 40px;
     }
 
     /* Estilização dos botões */
+    .buttons-container {
+        margin: 0 auto;
+
+        order: 5;
+    }
+
     .highlight-container button, .complete-collection-container button {
         display: flex;
-        font-size: 1rem;
-
+        font-size: 0.8rem;
     }
 
     /* Estilização do container 'pilha de livros (book stack) */
@@ -446,7 +457,7 @@ main {
     }
 
     .book-stack {
-        margin: 40px auto;
+        margin: 30px auto;
         height: 400px;
 
     }

@@ -78,7 +78,9 @@ main {
 
 /* Estilização do container do carrossel */
 .carousel-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
     gap: 10px;
 
     grid-column: 2;
@@ -493,8 +495,10 @@ main {
         display: none;
     }
 
-    .navbar-container-mobile {
+    .nav-container-mobile {
         display: flex;
+        width: 100%;
+        max-width: 300px;
     }
 
     /* Estilização do container de novidades e carrossel*/
@@ -505,25 +509,37 @@ main {
         margin-top: 100px;
     }
 
+
     /* Estilização dos títulos e texto do banner 'novidades da semana' */
     .week-news-container h1 {
         font-size: 3rem;
         max-width: 300px;
+
+        margin-left: 10px;
     }
 
-    .week-news-container h2 {
+    .book-title-author-container {
+        order: 3;
+    }
+
+    .book-title-author-container h2 {
         font-size: 2rem;
+        margin-left: 10px;
     }
 
-    .week-news-container span {
+    .book-title-author-container span {
         font-size: 1rem;
+        margin-left: 10px;
     }
 
     /* Estilização do container do carrossel */
     .carousel-container {
         display: flex;
-        gap: 10px;
+        /* flex-direction: column; */
+        margin: 50px 0;
+        width: fit-content;
     }
+ 
 
     /* Estilização da sessão de filtro e catálogo */
     .title-filter-catalog-container h1 {

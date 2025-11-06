@@ -23,11 +23,11 @@ header {
 }
 
 .nav-container {
-    display: none;
+    display: flex;
 }
 
 .nav-container-mobile {
-    display: flex;
+    display: none;
 }
 
 .nav-container .img-container {
@@ -331,6 +331,15 @@ h1 {
 /* Responsividade: smartphone */
 @media (min-width: 320px) and (max-width: 900px) {
      
+    .nav-container {
+        display: none;
+    }
+
+    .nav-container-mobile {
+        display: flex;
+    }
+
+
     .image-presentation-container {
         display: flex;
         flex-direction: column;

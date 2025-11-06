@@ -7,26 +7,26 @@ Este projeto é referente ao 'Desafio Trainee' da EJECT.
 ## Progresso do Desafio 🔨
 
 - [x] Tela login
-- [x] Tela de login (responsiva)
+- [x] Tela de login (responsiva/total)
 - [x] Tela cadastro
-- [x] Tela de cadastro (responsiva)
+- [x] Tela de cadastro (responsiva/total)
 - [x] Tela de recuperação de senha
-- [x] Tela recuperação de senha (responsiva)
+- [x] Tela recuperação de senha (responsiva/total)
 - [x] Tela de redefinição de senha
-- [x] Tela de redefinição de senha (responsiva)
+- [x] Tela de redefinição de senha (responsiva/mobile)
 - [x] Navbar/Menu
-- [ ] Menu/navbar (responsivo)
+- [x] Menu/navbar (responsiva/total)
 - [x] Footer/Rodapé
-- [x] Footer/Rodapé (responsiva)
+- [x] Footer/Rodapé (responsiva/total)
 - [x] Página Home
-- [ ] Página Home (responsiva)
+- [x] Página Home (responsiva/mobile)
 - [x] Página de Acervo
-- [ ] Página de Acervo (responsiva)
-- [x] Modal 'adição' (Acervo)
-- [ ] Modal 'adição' (acervo/responsivo)
+- [ ] Página de Acervo (responsiva/mobile)
+- [x] Modal 'adição' (Acervo/)
+- [ ] Modal 'adição' (acervo/responsiva/mobile)
 - [x] Modal 'edição' (Acervo)
-- [ ] MOdal 'edição' (acervo/responsivo)
+- [ ] MOdal 'edição' (acervo/responsiva/mobile)
 - [x] Página Sobre Nós
-- [x] Página Sobre Nós (responsiva)
+- [x] Página Sobre Nós (responsiva/mobile)
 - [x] Página Contato 
-- [x] Página Contato (responsiva)
+- [x] Página Contato (responsiva/total)

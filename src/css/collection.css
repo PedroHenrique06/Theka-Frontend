@@ -4,8 +4,17 @@ body {
     height: 100%;
     margin: 0;
 
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
+}
+
+.nav-container {
+    display: flex;
+}
+
+.navbar-container-mobile {
+    display: none;
 }
 
 /* Evita que o conteúdo principal fique sobreposto */
@@ -462,4 +471,80 @@ span {
 .buttons-container .buttons-wrapper .cancel-save-container {
     display: flex;
     gap: 20px;
+}
+
+@media (min-width: 320px) and (max-width: 900px) {
+    .nav-container {
+        display: none;
+    }
+
+    .navbar-container-mobile {
+        display: flex;
+    }
+
+    /* Estilização do container de novidades e carrossel*/
+    .week-news-carousel-container {
+        display: flex;
+        flex-direction: column;
+
+        margin-top: 100px;
+    }
+
+    /* Estilização dos títulos e texto do banner 'novidades da semana' */
+    .week-news-container h1 {
+        font-size: 3rem;
+        max-width: 300px;
+    }
+
+    .week-news-container h2 {
+        font-size: 2rem;
+    }
+
+    .week-news-container span {
+        font-size: 1rem;
+    }
+
+    /* Estilização do container do carrossel */
+    .carousel-container {
+        display: flex;
+        gap: 10px;
+    }
+
+    /* Estilização da sessão de filtro e catálogo */
+    .title-filter-catalog-container h1 {
+        font-size: 1.9rem;
+        margin-bottom: 20px;
+    }
+
+    .book-rows-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        column-gap: 10px;
+        row-gap: 10px;
+
+        margin: 0 auto;
+    }
+
+    .book-rows-container img {
+        width: 150px;
+    }
+
+    .add-button-container button img {
+        width: 20px;
+    }
+
+    .add-button-container button {
+        padding: 5px 15px;
+    }
+
+
+    .add-button-container {
+        width: fit-content;
+
+        position: absolute;
+        right: 0;
+        top: 200px
+    }
+
 }

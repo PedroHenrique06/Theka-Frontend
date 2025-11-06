@@ -80,13 +80,19 @@ main {
 
 /* Estilização do container de ver mais e carrossel*/
 .know-more-book-stack-container {
-    display: flex;
-    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    margin: 100px auto;
     width: 1190px;
 }
 
 .know-more-container {
-    width: 50%;
+    grid-column: 1;
+    grid-row: 1;
+
+    max-width: 600px;    
 }
 
 .know-more-container h1 {
@@ -111,6 +117,18 @@ main {
 }
 
 /* Estilização dos botões */
+.buttons-container {
+    grid-column: 1;
+    grid-row: 2;
+
+    width: fit-content;
+    height: fit-content;
+
+    margin-top: 100px;
+
+    order: 2;
+}
+
 .highlight-container button, .complete-collection-container button {
     display: flex;
 
@@ -140,7 +158,10 @@ main {
 
 /* Estilização do container 'pilha de livros (book stack) */
 .book-stack-container {
-    margin: auto;
+    grid-column: 2;
+    grid-row: 1/3;
+
+    margin: 0 auto;
 }
 
 .book-stack {

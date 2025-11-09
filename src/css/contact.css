@@ -182,7 +182,7 @@ main {
 }
 
 /* Responsividade: smartphone, tablet, notebook e PC */
-@media (min-width: 320px) and (max-width: 900px) {
+@media (min-width: 320px) and (max-width: 1050px) {
 
     .nav-container {
         display: none;

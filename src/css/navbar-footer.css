@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
 
-    max-width: 700px;
+    max-width: 750px;
     margin: 0 auto;
     padding: 10px 20px;
     border-radius: 100px;
@@ -138,7 +138,7 @@
     font-size: 1rem;
 }
 
-/* Responsividade: smartphone e tablet */
+/* Responsividade do footer: smartphone e tablet */
 @media (min-width: 320px) and (max-width: 900px) {
     .footer-container {
         display: flex;
@@ -162,7 +162,7 @@
     }
 }
 
-/* Responsividade: notebook*/
+/* Responsividade do footer: notebook*/
 @media (min-width: 901px) and (max-width: 1000px) {
     .footer-container {
         display: flex;
@@ -185,9 +185,8 @@
     }
 }
 
-/* Responsividade: notebook e PC */
+/* Responsividade do footer: notebook e PC */
 @media (min-width: 1001px) and (max-width: 1400px) {
-
 
     .footer-info-container {
         gap: 50px;

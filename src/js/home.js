@@ -7,7 +7,7 @@ books.forEach(book => {
     book.addEventListener('click', rotateBooks);
 });
 
-// Muda a ordem dos livros na pilha
+// Função para mudar a ordem dos livros na pilha
 function rotateBooks() {
     books.forEach(book => {
         if (book.classList.contains('front')) {

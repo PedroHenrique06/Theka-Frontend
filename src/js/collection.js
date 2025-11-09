@@ -14,6 +14,23 @@ function expandBookCover(choosenBook) {
         }
     });
 
-    choosenBook.currentTarget.classList.add('active');
-    
+    choosenBook.currentTarget.classList.add('active'); 
+}
+
+const pages = document.querySelectorAll('.pagination-item');
+
+// Adiciona a função de mudar a página atual a todas as páginas
+pages.forEach(page => {
+    page.addEventListener('click', changeCurrentPage);
+})
+
+// Função para mudar a página atual
+function changeCurrentPage(choosenPage) {
+    pages.forEach(page => {
+        if (page.classList.contains('active')) {
+            page.classList.remove('active');
+        }
+    });
+
+    choosenPage.currentTarget.classList.add('active');
 }

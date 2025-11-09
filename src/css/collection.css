@@ -103,16 +103,6 @@ main {
     border-radius: 15px;
 }
 
-
-.book-cover-container.active {
-    width: 300px;
-}
-
-.book-cover-container.active .book-cover {
-    position: absolute;
-    left: 0;
-}
-
 .book-cover-container .arrow-icon {
     position: absolute;
     right: 20px;
@@ -128,6 +118,19 @@ main {
     border-radius: 15px;
 }
 
+/* Estilização do container da capa de livro ativa */
+.book-cover-container.active {
+    width: 300px;
+}
+
+.book-cover-container.active .book-cover {
+    position: absolute;
+    left: 0;
+}
+
+.book-cover-container.active .arrow-icon {
+    transform: rotate(90deg);
+}
 
 /* Estilização da sessão de filtro e catálogo */
 .title-filter-catalog-container h1 {

@@ -289,14 +289,8 @@ main {
     justify-content: center;
 }
 
-.pagination-item.active {
-    border-radius: 100px;
-
-    background-color: #81013A;
-}
-
-.pagination-item.active h3 {
-    padding: 5px 10px;
+.pagination-item:hover {
+    cursor: pointer;
 }
 
 .pagination-item h3 {
@@ -306,6 +300,17 @@ main {
     font-family: 'DM Sans', sans-serif;
 
     color: #CACAC9;
+}
+
+/* Estilização do item de paginação ativo */
+.pagination-item.active {
+    border-radius: 100px;
+
+    background-color: #81013A;
+}
+
+.pagination-item.active h3 {
+    padding: 5px 10px;
 }
 
 /* Estilização do modal de adição e edição de material */

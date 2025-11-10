@@ -34,3 +34,19 @@ function changeCurrentPage(choosenPage) {
 
     choosenPage.currentTarget.classList.add('active');
 }
+
+books = document.querySelectorAll('.book-cover');
+const modal = document.getElementById('modal-edit');
+
+books.forEach(book => {
+    book.addEventListener('click', (e) => {
+        e.stopPropagation();
+        modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+    });
+});
+
+document.addEventListener('click', (e) => {
+    if (!modal.contains(e.target)) {
+        modal.style.display = 'none';
+    } 
+});

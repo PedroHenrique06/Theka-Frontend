@@ -1,5 +1,7 @@
 
 const books = document.querySelectorAll('.book-cover-container');
+const pages = document.querySelectorAll('.pagination-item');
+const modal = document.getElementById('modal-edit');
 
 // Adiciona a função de expandir capa a todos os items do carrossel
 books.forEach(book => {
@@ -16,8 +18,6 @@ function expandBookCover(choosenBook) {
 
     choosenBook.currentTarget.classList.add('active'); 
 }
-
-const pages = document.querySelectorAll('.pagination-item');
 
 // Adiciona a função de mudar a página atual a todas as páginas
 pages.forEach(page => {
@@ -36,8 +36,8 @@ function changeCurrentPage(choosenPage) {
 }
 
 books = document.querySelectorAll('.book-cover');
-const modal = document.getElementById('modal-edit');
 
+// Ainda não funciona 
 books.forEach(book => {
     book.addEventListener('click', (e) => {
         e.stopPropagation();

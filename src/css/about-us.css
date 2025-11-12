@@ -1,5 +1,6 @@
 /* Estilização do corpo do site */
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
 
@@ -76,17 +77,17 @@ header {
 .menu-tags-container {
     display: flex;
     overflow-x: auto;
-    scrollbar-width: none; 
+    scrollbar-width: none;
     flex-wrap: nowrap;
     white-space: nowrap;
-    
+
     margin-top: 20px;
     gap: 20px;
     max-width: 100%;
 }
 
 .tag {
-    font-size:  1.5rem;
+    font-size: 1.5rem;
     font-weight: 700;
     font-family: 'Inter', 'sans-serif';
     font-style: bold;
@@ -117,7 +118,7 @@ header {
     gap: 150px;
     border-radius: 10px;
     padding: 0px 50px 0px 50px;
-    
+
     max-width: 990px;
 
     background-color: #A1D54A;
@@ -151,7 +152,7 @@ h1 {
     font-size: 1.1rem;
     font-style: regular;
     font-weight: 400;
-    font-family:'Inter', sans-serif;
+    font-family: 'Inter', sans-serif;
 
     color: #111A04;
 
@@ -163,10 +164,10 @@ h1 {
     display: flex;
     flex-direction: column;
 
-    margin:20px auto;
+    margin: 20px auto;
     max-width: 1090px;
     padding: 0px;
-    
+
 }
 
 .our-values-container h1 {
@@ -191,24 +192,28 @@ h1 {
 }
 
 /* Estilização dos containers internos */
-.access-for-all-container, .love-for-literature-container, .community-and-exchange-container {
+.access-for-all-container,
+.love-for-literature-container,
+.community-and-exchange-container {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    
+
     max-width: 387px;
     width: 387px;
     max-height: 266px;
     height: 266px;
 }
 
-.access-for-all-container img, .love-for-literature-container img, .community-and-exchange-container img {
+.access-for-all-container img,
+.love-for-literature-container img,
+.community-and-exchange-container img {
     display: inline-block;
     align-self: flex-end;
 }
 
-.access-for-all-container {    
+.access-for-all-container {
     color: #81013A;
     background-color: #F8C200;
 }
@@ -239,13 +244,28 @@ h1 {
     background-color: #BF0259;
 }
 
-.community-and-exchange-container img{
+.community-and-exchange-container img {
     width: 200px;
 }
 
 .community-and-exchange-container h3 {
     margin-bottom: 20px;
 }
+
+/* Estilização do conteúdo oculto da sessão 'nossos valores'*/
+    .access-for-all-container p,
+    .love-for-literature-container p,
+    .community-and-exchange-container p {
+        margin: auto;
+        font-size: 0.9rem;
+        width: 260px;
+    }
+
+    .love-for-literature-container p,
+    .community-and-exchange-container p {
+        color: white;
+        width: 250px;
+    }
 
 /* Estilização da sessão 'Nossa equipe' */
 .our-team-container {
@@ -268,11 +288,14 @@ h1 {
     gap: 50px
 }
 
-.member-container-1, .member-container-2, .member-container-3, .member-container-4 {
+.member-container-1,
+.member-container-2,
+.member-container-3,
+.member-container-4 {
     display: flex;
     border-radius: 20px;
     width: 286px;
-    
+
     position: relative;
 }
 
@@ -289,7 +312,7 @@ h1 {
     border-radius: 100px;
     margin-left: 10px;
     width: fit-content;
-    
+
     position: absolute;
     bottom: 20px;
 
@@ -330,7 +353,7 @@ h1 {
 
 /* Responsividade: smartphone */
 @media (min-width: 320px) and (max-width: 900px) {
-     
+
     .nav-container {
         display: none;
     }
@@ -372,14 +395,14 @@ h1 {
     }
 
     .tag {
-        font-size:  1rem;
+        font-size: 1rem;
     }
 
     /* Estilização do banner 'Nossa história' */
     .history-image-container {
         display: flex;
         flex-direction: column;
-        
+
         max-width: 300px;
         height: 620px;
 
@@ -425,7 +448,7 @@ h1 {
         margin: auto;
     }
 
-    .our-values-container .title-container h1 {        
+    .our-values-container .title-container h1 {
         width: 100%;
         max-width: 550px;
 
@@ -438,20 +461,22 @@ h1 {
     }
 
     /* Estilização dos containers internos */
-    .access-for-all-container, .love-for-literature-container, .community-and-exchange-container {
+    .access-for-all-container,
+    .love-for-literature-container,
+    .community-and-exchange-container {
         flex-direction: column;
     }
 
-    .access-for-all-container {    
+    .access-for-all-container {
         max-width: 300px;
         margin: auto;
     }
 
-    .access-for-all-container h3 {    
+    .access-for-all-container h3 {
         padding: 20px 0;
     }
 
-    .access-for-all-container img {    
+    .access-for-all-container img {
         width: 250px;
     }
 
@@ -483,7 +508,7 @@ h1 {
     }
 
     .team-container {
-        flex-direction: column; 
+        flex-direction: column;
         margin: auto;
-    }    
+    }
 }

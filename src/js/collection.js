@@ -2,6 +2,7 @@
 const books = document.querySelectorAll('.book-cover-container');
 const pages = document.querySelectorAll('.pagination-item');
 const modal = document.getElementById('modal-edit');
+const arrows = document.querySelectorAll('.arrow-icon');
 
 // Adiciona a função de expandir capa a todos os items do carrossel
 books.forEach(book => {
@@ -16,7 +17,21 @@ function expandBookCover(choosenBook) {
         }
     });
 
-    choosenBook.currentTarget.classList.add('active'); 
+    choosenBook.currentTarget.classList.add('active');
+    const arrow = choosenBook.currentTarget.querySelector('.arrow-icon');
+
+    rotateCurrentArrow(arrow); 
+}
+
+// Função para girar o ícone da seta
+function rotateCurrentArrow(choosenArrow) {
+    arrows.forEach(arrow => {
+        if (arrow.classList.contains('rotated')) {
+            arrow.classList.remove('rotated');
+        }
+    });
+
+    choosenArrow.classList.add('rotated');
 }
 
 // Adiciona a função de mudar a página atual a todas as páginas

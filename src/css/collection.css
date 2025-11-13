@@ -196,7 +196,9 @@ main {
     margin-right: 20px;
 }
 
-.options-container div {
+.options-container .genre-container,
+.options-container .publisher-container,
+.options-container .search-button-container {
     font-size: 0.9rem;
     font-weight: 300;
     font-style: light;
@@ -214,10 +216,48 @@ main {
 .options-container .publisher-container {
     display: flex;
     align-items: center;
+
+}
+
+.options-container .genre-container {
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 10px ;
+
+    position: relative;
+}
+
+.genre-container .genre-and-icon {
+    display: flex;
+    align-items: center;
     gap: 40px;
 
     padding: 10px 15px;
+    border-bottom: solid 2px #81013A;
+}
 
+/* PAREI AQUI */
+.genre-options-container {
+    display: block;
+    background-color: white;
+    
+    /* margin-top: 40px; */
+    /* padding: 0px 20px; */
+
+    /* border: 2px solid #81013A; */
+    border-top: none;
+    border-radius: 0px 0px 20px 20px;
+
+    z-index: 10;
+}
+
+.genre-options-container ul {
+    list-style: none;
+    padding-left:  0px;
+}
+
+.genre-options-container li {
+    padding-top: 10px;
 }
 
 .options-container .search-button-container {

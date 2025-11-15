@@ -7,13 +7,14 @@
     <title>Theka</title>
 
      <!-- Link para os estilos CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/navbar-footer.css">
     <link rel="stylesheet" href="../css/collection.css">
 
      <!-- importação das funcionalidades da página -->
-    <script src="/src/js/general.js" defer></script>
-    <script src="/src/js/collection.js" defer></script>
+    <script type="module" src="/src/js/general.js"></script>
+    <script type="module" src="/src/js/collection.js"></script>
+    <script type="module" src="/src/js/api.js"></script>
 </head>
 
 <body>
@@ -123,37 +124,13 @@
             </div>
             <!-- Container de catálogo de livros -->
             <div class="catalog-container">
-                <div class="book-rows-container">
-                    <div class="book-cover">
-                        <img src="/images/collection/book-cover/book-cover-1.png" alt="">
-                    </div>
-                    <div class="book-cover">
-                        <img src="/images/collection/book-cover/book-cover-2.png" alt="">
-                    </div>
-                    <div class="book-cover">
-                        <img src="/images/collection/book-cover/book-cover-3.png" alt="">
-                    </div>
-                    <div class="book-cover">
-                        <img src="/images/collection/book-cover/book-cover-4.png" alt="">
-                    </div>
-                    <div class="book-cover">
-                        <img src="/images/collection/book-cover/book-cover-5.png" alt="">
-                    </div>
-                    <div class="book-cover">
-                        <img src="/images/collection/book-cover/book-cover-1.png" alt="">
-                    </div>
-                    <div class="book-cover">
-                        <img src="/images/collection/book-cover/book-cover-2.png" alt="">
-                    </div>
-                    <div class="book-cover">
-                        <img src="/images/collection/book-cover/book-cover-3.png" alt="">
-                    </div>
-                    <div class="book-cover">
-                        <img src="/images/collection/book-cover/book-cover-4.png" alt="">
-                    </div>
-                    <div class="book-cover">
-                        <img src="/images/collection/book-cover/book-cover-5.png" alt="">
-                    </div>
+                <div id="book-rows-container" class="book-rows-container">
+                    <!-- Exemplo de container
+                        <div class="book-cover">
+                            <img src="caminho-para-imagem" alt="">
+                        </div> 
+                    -->
+
                     <div class="add-button-container">
                         <button>
                             <img src="/images/collection/plus-icon.png" alt="">

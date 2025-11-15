@@ -256,6 +256,13 @@ main {
     row-gap: 20px;
 }
 
+.book-cover img {
+    width: 230px;
+    height: auto;
+
+    border-radius: 10px;
+}
+
 /* Estilização do botão de adicionar livro */
 .add-button-container {
     width: fit-content;
@@ -583,6 +590,7 @@ main {
 
     .book-rows-container img {
         width: 150px;
+        height: auto;
     }
 
     .add-button-container button img {

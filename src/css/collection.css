@@ -258,6 +258,7 @@ main {
 
 .book-cover img {
     width: 230px;
+    max-width: 100%;
     height: auto;
 
     border-radius: 10px;

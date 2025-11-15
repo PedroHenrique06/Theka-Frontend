@@ -1,8 +1,11 @@
+import { getBooks } from "./api.js";
 
 const books = document.querySelectorAll('.book-cover-container');
 const pages = document.querySelectorAll('.pagination-item');
 const modal = document.getElementById('modal-edit');
 const arrows = document.querySelectorAll('.arrow-icon');
+
+const catalog = document.getElementById('book-rows-container');
 
 // Adiciona a função de expandir capa a todos os items do carrossel
 books.forEach(book => {
@@ -50,18 +53,44 @@ function changeCurrentPage(choosenPage) {
     choosenPage.currentTarget.classList.add('active');
 }
 
-books = document.querySelectorAll('.book-cover');
+// VAI SER ESTUDADO PARA SER RESOLVIDO O PROBLEMA.
 
-// Ainda não funciona 
-books.forEach(book => {
-    book.addEventListener('click', (e) => {
-        e.stopPropagation();
-        modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+// books = document.querySelectorAll('.book-cover');
+
+// // Ainda não funciona 
+// books.forEach(book => {
+//     book.addEventListener('click', (e) => {
+//         e.stopPropagation();
+//         modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+//     });
+// });
+
+// document.addEventListener('click', (e) => {
+//     if (!modal.contains(e.target)) {
+//         modal.style.display = 'none';
+//     } 
+// });
+
+// Função para carregar os livros do catálogo
+async function loadCatalogBooks() {
+    let books_info = await getBooks();
+    books_info.results.forEach(book => {
+        createCatalogItem(book.capa);
     });
-});
+}
 
-document.addEventListener('click', (e) => {
-    if (!modal.contains(e.target)) {
-        modal.style.display = 'none';
-    } 
-});
+// Função para criar os elementos do catálogo dinamicamente
+function createCatalogItem(bookCoverImg) {
+    const bookCoverContainer = document.createElement('div');
+    bookCoverContainer.classList.add('book-cover');
+
+    const img = document.createElement('img');
+    img.src = bookCoverImg;
+
+    bookCoverContainer.appendChild(img);
+
+    catalog.appendChild(bookCoverContainer);
+}
+
+loadCatalogBooks();
+

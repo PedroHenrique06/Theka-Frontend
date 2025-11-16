@@ -1,0 +1,24 @@
+
+const API_BASE_URL = "https://thekaapi.pythonanywhere.com";
+
+// Função para buscar as informações dos livros no repositório
+export async function getBooks() {
+    try{
+        const response = await fetch(`${API_BASE_URL}/livros/`);
+        return await response.json(); 
+    }
+    catch(error) {
+        throw Error("Falha ao acessar a lista de livros do catálogo.");
+    }
+}
+
+// Função para buscar os livros da sessão 'novidades da semana'
+export async function getBookWeekNews() {
+    try {
+        const response = await fetch(`${API_BASE_URL}/livros/novidades/`);
+        return await response.json();
+    }
+    catch(error) {
+        throw Error("Falha ao acessar as novidades da semana.");
+    }
+}

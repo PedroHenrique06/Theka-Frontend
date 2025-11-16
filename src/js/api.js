@@ -22,3 +22,14 @@ export async function getBookWeekNews() {
         throw Error("Falha ao acessar as novidades da semana.");
     }
 }
+
+// Função para buscar um livro pelo id
+export async function getBookById(id) {
+    try {
+        const response = await fetch(`${API_BASE_URL}/livros/${id}/`);
+        return await response.json();
+    }
+    catch(error) {
+        throw Error("Falha ao buscar o livro pelo id.");
+    }
+}

@@ -7,7 +7,6 @@ let isActive = false;
 const catalog = document.getElementById('book-rows-container');
 
 const pages = document.querySelectorAll('.pagination-item');
-const modal = document.getElementById('modal-edit');
 
 // Função para carregar os livros do carrossel
 async function loadCarousel() {
@@ -108,24 +107,6 @@ function changeCurrentPage(choosenPage) {
     choosenPage.currentTarget.classList.add('active');
 }
 
-// VAI SER ESTUDADO PARA SER RESOLVIDO O PROBLEMA.
-
-// books = document.querySelectorAll('.book-cover');
-
-// // Ainda não funciona 
-// books.forEach(book => {
-//     book.addEventListener('click', (e) => {
-//         e.stopPropagation();
-//         modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
-//     });
-// });
-
-// document.addEventListener('click', (e) => {
-//     if (!modal.contains(e.target)) {
-//         modal.style.display = 'none';
-//     } 
-// });
-
 // Função para carregar os livros do catálogo
 async function loadCatalogBooks() {
     const booksInfo = await getBooks();
@@ -138,6 +119,7 @@ async function loadCatalogBooks() {
 function createCatalogItem(bookCover) {
     const bookCoverContainer = document.createElement('div');
     bookCoverContainer.classList.add('book-cover');
+    bookCoverContainer.onclick=changeDisplayStateModal;
 
     const bookCoverImg = document.createElement('img');
     bookCoverImg.src = bookCover;
@@ -146,6 +128,20 @@ function createCatalogItem(bookCover) {
 
     catalog.appendChild(bookCoverContainer);
 }
+
+function changeDisplayStateModal(event) {
+    event.stopPropagation();
+    const modal = document.getElementById('modal-edit');
+    modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+}
+
+document.addEventListener('click', (event) => {
+    const modal = document.getElementById('modal-edit');  
+
+    if (!modal.contains(event.target)){
+        modal.style.display = 'none';
+    }
+});
 
 loadCatalogBooks();
 loadCarousel();

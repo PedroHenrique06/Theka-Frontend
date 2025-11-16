@@ -1,37 +1,76 @@
-import { getBooks } from "./api.js";
+import { getBooks, getBookWeekNews } from "./api.js";
 
-const books = document.querySelectorAll('.book-cover-container');
-const pages = document.querySelectorAll('.pagination-item');
-const modal = document.getElementById('modal-edit');
-const arrows = document.querySelectorAll('.arrow-icon');
+const carousel = document.getElementById('carousel-container');
+let isRotated = false;
+let isActive = false;
 
 const catalog = document.getElementById('book-rows-container');
 
-// Adiciona a função de expandir capa a todos os items do carrossel
-books.forEach(book => {
-    book.addEventListener('click', expandBookCover);
-});
+const pages = document.querySelectorAll('.pagination-item');
+const modal = document.getElementById('modal-edit');
+
+// Função para carregar os livros do carrossel
+async function loadCarousel() {
+    const bookWeekNews = await getBookWeekNews();
+    bookWeekNews.forEach(book => {
+        createCarouselItem(book.capa);
+    });
+    isRotated = !isRotated;
+    isActive = !isActive;
+}
+
+// Função para criar os elementos da sessão 'novidades da semana' dinamicamente.
+function createCarouselItem(bookCover) {
+    const bookCoverContainer = document.createElement('div');
+    bookCoverContainer.classList.add('book-cover-container');
+    bookCoverContainer.onclick=expandBookCover;
+    
+    if (!isActive) {
+        bookCoverContainer.classList.add('active');
+        isActive = true;
+    }
+    const arrowImg = '../../images/collection/arrow-up-icon-white.png';
+    const arrowIcon = document.createElement('img');
+    arrowIcon.src = arrowImg;
+    arrowIcon.alt = 'Icone de seta';
+    arrowIcon.classList.add('arrow-icon');
+
+    if (!isRotated) {
+        arrowIcon.classList.add('rotated');
+        isRotated = true;
+    }
+
+    const bookCoverImg = document.createElement('img');
+    bookCoverImg.src = bookCover;
+    bookCoverImg.alt = 'Capa do livro';
+    bookCoverImg.classList.add('book-cover');
+
+
+    bookCoverContainer.appendChild(arrowIcon);
+    bookCoverContainer.appendChild(bookCoverImg);
+    carousel.appendChild(bookCoverContainer); 
+}
+
 
 // Função para expandir a capa do livro selecionada
-function expandBookCover(choosenBook) {
-    books.forEach(book => {
-        if (book.classList.contains('active')) {
-            book.classList.remove('active');
-        }
+function expandBookCover(event) {
+    const books = document.querySelectorAll('.book-cover-container');
+    const clicked = event.currentTarget;
+    books.forEach(book => { 
+        book.classList.remove('active'); 
     });
 
-    choosenBook.currentTarget.classList.add('active');
-    const arrow = choosenBook.currentTarget.querySelector('.arrow-icon');
+    clicked.classList.add('active');
+    const arrow = clicked.querySelector('.arrow-icon');
 
     rotateCurrentArrow(arrow); 
 }
 
 // Função para girar o ícone da seta
 function rotateCurrentArrow(choosenArrow) {
+    const arrows = document.querySelectorAll('.arrow-icon');
     arrows.forEach(arrow => {
-        if (arrow.classList.contains('rotated')) {
-            arrow.classList.remove('rotated');
-        }
+        arrow.classList.remove('rotated');
     });
 
     choosenArrow.classList.add('rotated');
@@ -73,24 +112,25 @@ function changeCurrentPage(choosenPage) {
 
 // Função para carregar os livros do catálogo
 async function loadCatalogBooks() {
-    let books_info = await getBooks();
-    books_info.results.forEach(book => {
+    const booksInfo = await getBooks();
+    booksInfo.results.forEach(book => {
         createCatalogItem(book.capa);
     });
 }
 
 // Função para criar os elementos do catálogo dinamicamente
-function createCatalogItem(bookCoverImg) {
+function createCatalogItem(bookCover) {
     const bookCoverContainer = document.createElement('div');
     bookCoverContainer.classList.add('book-cover');
 
-    const img = document.createElement('img');
-    img.src = bookCoverImg;
+    const bookCoverImg = document.createElement('img');
+    bookCoverImg.src = bookCover;
 
-    bookCoverContainer.appendChild(img);
+    bookCoverContainer.appendChild(bookCoverImg);
 
     catalog.appendChild(bookCoverContainer);
 }
 
 loadCatalogBooks();
+loadCarousel();
 

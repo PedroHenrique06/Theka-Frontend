@@ -33,3 +33,14 @@ export async function getBookById(id) {
         throw Error("Falha ao buscar o livro pelo id.");
     }
 }
+
+// Função para buscar os contatos do rodapé
+export async function getInstituicionalContacts() {
+    try {
+        const response = await fetch(`${API_BASE_URL}/institucional/contato/`);
+        return await response.json();
+    }
+    catch(error) {
+        throw Error("Falha ao buscar os dados de contatos.");
+    }
+}

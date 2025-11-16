@@ -84,8 +84,9 @@ main {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
 
-    margin: 100px auto;
+    margin: 50px auto;
     width: 1190px;
+    max-height: 800px;
 }
 
 .know-more-container {
@@ -222,7 +223,7 @@ main {
 
 /* Estilização da sessão de estatísticas */
 .our-statistics-container {
-    margin: 100px auto;
+    margin: 50px auto;
 }
 
 .our-statistics-container h1 {
@@ -231,6 +232,7 @@ main {
     font-style: bold;
 
     color: #81013A;
+    margin-bottom: 20px;
 }
 
 /* Estilização do envelopador dos containers de estatística */

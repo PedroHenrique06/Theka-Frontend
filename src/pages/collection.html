@@ -105,7 +105,7 @@
             <div class="catalog-container">
                 <div id="book-rows-container" class="book-rows-container">
                     <!-- Itens inseridos dinamicamente via JS -->
-                    <div class="add-button-container">
+                    <div id="add-button-container" class="add-button-container">
                             <span class="icon">+</span>
                             <span class="label">Adicionar livro</span>
                     </div>
@@ -209,8 +209,8 @@
         </div>
         <div class="book-info-preview-container">
             <div class="book-title-author-preview">
-                <h2 class="title-preview">Título do livro</h2>
-                <h3 class="author-year-preview">Autor do livro, 2000</h3>
+                <h3 class="title-preview">Título do livro</h3>
+                <h4 class="author-year-preview">Autor do livro, 2000</h4>
             </div>
             <div class="book-resume-preview">
                 <p class="resume-preview">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus perferendis voluptates voluptatem, rem recusandae a ex illum aperiam deserunt ad neque distinctio saepe ea dignissimos debitis ipsam tenetur dolorem quaerat. lore</p>
@@ -226,7 +226,7 @@
                 </button>
             </div>
         </div>
-        <div class="close-button-container">
+        <div id="close-button-container" class="close-button-container">
             <button>
                 <img src="/images/collection/close-icon.png" alt="Botão de fechar modal">
             </button>
@@ -314,11 +314,7 @@
         <div class="book-cover-form-container">
             <!-- Container da edição da capa do livro -->
             <div class="book-cover-container">
-                <img src="/images/collection/image-icon.png" class="image-icon" alt="ícone de imagem">
-                <button>
-                    <span>Adicionar capa</span>
-                    <img src="/images/collection/upload-icon.png" class="upload-icon" alt="ícone de upload">
-                </button>
+                <img src="#" class="image-icon" alt="capa do livro">
             </div>
             <div class="form-buttons-container">
                 <!-- Container do formulário com os dados do material -->
@@ -357,7 +353,7 @@
                         <!-- Terceira linha de dados -->
                         <div class="resume-container">
                             <label>Resumo do material</label>
-                            <input type="text">
+                            <textarea type="text"></textarea>
                         </div>
                     </form>
                 </div>

@@ -131,15 +131,16 @@ function createCatalogItem(bookCover) {
 
 function changeDisplayStateModal(event) {
     event.stopPropagation();
-    const modal = document.getElementById('modal-edit');
-    modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+    const overlay = document.getElementById('overlay-modal-edit');
+    overlay.style.display = overlay.style.display === 'flex' ? 'none' : 'flex';
 }
 
 document.addEventListener('click', (event) => {
+    const overlay = document.getElementById('overlay-modal-edit');
     const modal = document.getElementById('modal-edit');  
 
-    if (!modal.contains(event.target)){
-        modal.style.display = 'none';
+    if (overlay.style.display === 'flex' && !modal.contains(event.target)){
+        overlay.style.display = 'none';
     }
 });
 

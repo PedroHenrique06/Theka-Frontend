@@ -111,15 +111,24 @@ function changeCurrentPage(choosenPage) {
 async function loadCatalogBooks() {
     const booksInfo = await getBooks();
     booksInfo.results.forEach(book => {
-        createCatalogItem(book.capa);
+        createCatalogItem(book.capa, book.id, book.titulo, book.autor, book.ano_publicacao, book.resumo, book.numero_paginas, book.editora);
     });
 }
 
 // Função para criar os elementos do catálogo dinamicamente
-function createCatalogItem(bookCover) {
+function createCatalogItem(bookCover, bookId, bookTitle, bookAuthor, bookYear, bookSummary, bookPages, bookPublisher) {
     const bookCoverContainer = document.createElement('div');
     bookCoverContainer.classList.add('book-cover');
     bookCoverContainer.onclick=changeDisplayStatePreview;
+
+    bookCoverContainer.dataset.bookId = bookId;
+    bookCoverContainer.dataset.bookCover = bookCover;
+    bookCoverContainer.dataset.bookTitle = bookTitle;
+    bookCoverContainer.dataset.bookAuthor = bookAuthor;
+    bookCoverContainer.dataset.bookYear = bookYear;
+    bookCoverContainer.dataset.bookSummary = bookSummary;
+    bookCoverContainer.dataset.bookPages = bookPages;
+    bookCoverContainer.dataset.bookPublisher = bookPublisher;
 
     const bookCoverImg = document.createElement('img');
     bookCoverImg.src = bookCover;
@@ -129,13 +138,34 @@ function createCatalogItem(bookCover) {
     catalog.appendChild(bookCoverContainer);
 }
 
+// Função por abrir e fechar o modal de preview 
 function changeDisplayStatePreview(event) {
     event.stopPropagation();
     const overlay = document.getElementById('overlay-preview-container');
     overlay.style.display = overlay.style.display === 'flex' ? 'none' : 'flex';
-    console.log(overlay.style.display);
+
+    fillPreviewModalData(event.currentTarget.dataset);
 }
 
+function fillPreviewModalData(bookData) {
+    const bookCoverImg = document.querySelector('.book-cover-preview img');
+    const bookTitle = document.querySelector('.title-preview');
+    const bookAuthorYear = document.querySelector('.author-year-preview');
+    const bookSummary = document.querySelector('.resume-preview');
+    const bookPages = document.querySelector('.pages');
+    const bookPublisher = document.querySelector('.publisher');
+    const editButton = document.getElementById('edit-button-preview');
+
+    bookCoverImg.src = bookData.bookCover;
+    bookTitle.textContent = bookData.bookTitle;
+    bookAuthorYear.textContent = `${bookData.bookAuthor} - ${bookData.bookYear}`;
+    bookSummary.textContent = bookData.bookSummary;
+    bookPages.textContent = `páginas: ${bookData.bookPages}`;
+    bookPublisher.textContent = `${bookData.bookPublisher}`;
+    editButton.onclick = changeDisplayStateModalEdit;
+}
+
+// Função por abrir e fechar o modal de editar livro
 function changeDisplayStateModalEdit(event) {
     event.stopPropagation();
     const overlay = document.getElementById('overlay-modal-edit');

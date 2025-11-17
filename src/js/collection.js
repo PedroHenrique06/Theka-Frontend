@@ -155,6 +155,7 @@ function fillPreviewModalData(bookData) {
     const bookPages = document.querySelector('.pages');
     const bookPublisher = document.querySelector('.publisher');
     const editButton = document.getElementById('edit-button-preview');
+    const closeButton = document.getElementById('close-button-container');
 
     bookCoverImg.src = bookData.bookCover;
     bookTitle.textContent = bookData.bookTitle;
@@ -163,6 +164,7 @@ function fillPreviewModalData(bookData) {
     bookPages.textContent = `páginas: ${bookData.bookPages}`;
     bookPublisher.textContent = `${bookData.bookPublisher}`;
     editButton.onclick = changeDisplayStateModalEdit;
+    closeButton.onclick = closePreviewModal;
 }
 
 // Função por abrir e fechar o modal de editar livro
@@ -170,6 +172,13 @@ function changeDisplayStateModalEdit(event) {
     event.stopPropagation();
     const overlay = document.getElementById('overlay-modal-edit');
     overlay.style.display = overlay.style.display === 'flex' ? 'none' : 'flex';
+}
+
+// Função para fechar o modal de preview
+function closePreviewModal(event) {
+    event.stopPropagation();
+    const overlay = document.getElementById('overlay-preview-container');
+    overlay.style.display = 'none';
 }
 
 // Função por fechar os modais ao clicar fora deles

@@ -617,10 +617,11 @@ main {
     width: 380px;
 }
 
-.form-wrapper .resume-container input {
+.form-wrapper .resume-container textarea {
     height: 130px;
     max-width: 100%;
-    border-radius: 20px;
+    border-radius: 10px;
+    padding: 10px 20px;
 }
 
 /* Estilização dos botões do modal de adição e edição */

@@ -364,22 +364,27 @@ main {
 /* Estilização do container de preview de livros*/
 .book-preview-container {
     display: flex;
-    gap: 25px;
-    
     position: relative;
-
+    
+    gap: 25px;
+    margin: 50px auto;
     max-width: 800px;
     border-radius: 20px;
+
 }
 
 /* Estilização do container da capa do livro */
 .book-cover-preview {
-    max-width: 350px;
-    height: auto;
+    max-width: 320px;
+    height: autos;
 }
 
 .book-cover-preview img {
+    display: block;
+    object-fit: cover;
+    
     max-width: 100%;
+
     border-radius: 10px;
 }
 
@@ -390,7 +395,7 @@ main {
 
     max-width: 350px;
 
-    padding: 20px 0;
+    padding: 0 10px;
     gap: 10px;
 }
 .book-title-author-preview {

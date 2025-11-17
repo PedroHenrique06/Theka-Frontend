@@ -360,7 +360,95 @@ main {
     padding: 5px 10px;
 }
 
-/* Estilização do envelopador de modal */
+
+/* Estilização do container de preview de livros*/
+.book-preview-container {
+    display: flex;
+    gap: 25px;
+    
+    position: relative;
+
+    max-width: 800px;
+    border-radius: 20px;
+}
+
+/* Estilização do container da capa do livro */
+.book-cover-preview {
+    max-width: 350px;
+    height: auto;
+}
+
+.book-cover-preview img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Estilização do container das informações do livro */
+.book-info-preview-container {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 350px;
+
+    padding: 20px 0;
+    gap: 10px;
+}
+.book-title-author-preview {
+    margin-top: 35px;
+}
+
+.author-year-preview {
+    font-size: 1.5rem;
+}
+
+.book-resume-preview {
+    margin: 20px 0;
+    max-width: 100%;
+}
+
+.book-pages-publisher-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.book-pages-publisher-preview .publisher {
+    color: #7E7E7D
+}
+
+/* Estiização do botão de editar */
+.edit-button-preview {
+    display: flex;
+    justify-content: end;
+}
+
+.edit-button-preview button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 100px;
+    padding: 10px 20px;
+
+    font: 1rem;
+    font-weight: 800;
+    font-style: extra bold;
+
+    color: white;
+    background-color: #393939;
+    border: 2px solid #393939;
+}
+
+/* Estilização do botão de fechar o modal de preview */
+.close-button-container button{
+    background-color: transparent;
+    border: none;
+
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+/* Estilização do envelopador de modal de adição e edição */
 .overlay-modal-add, .overlay-modal-edit {
     position: fixed;
     inset: 0;
@@ -411,7 +499,7 @@ main {
     gap: 50px;
 }
 
-/* Estilização do container da capa do livro do modal */
+/* Estilização do container da capa do livro do modal de adição e edição */
 .book-cover-form-container .book-cover-container {
     display: flex;
     align-items: center;
@@ -454,7 +542,7 @@ main {
     width: 24px;
 }
 
-/* Estilização do container do formulário do modal */
+/* Estilização do container do formulário do modal de adição e ediçãol*/
 .form-container {
     max-width: 100%; 
 }
@@ -502,7 +590,7 @@ main {
     border-radius: 20px;
 }
 
-/* Estilização dos botões do modal*/
+/* Estilização dos botões do modal de adição e edição */
 .add-to-catalog-container .buttons-container,
 .edit-catalog-container .buttons-container {
     display: flex;

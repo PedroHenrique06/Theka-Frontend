@@ -22,9 +22,9 @@ async function loadCarousel() {
 function createCarouselItem(bookCover, bookId, bookTitle, bookAuthor, bookYear) {
     const bookCoverContainer = document.createElement('div');
     bookCoverContainer.classList.add('book-cover-container');
-    bookCoverContainer.onclick=expandBookCover;
+    bookCoverContainer.onclick = expandBookCover;
     bookCoverContainer.dataset.bookId = bookId;
-    
+
     if (!isActive) {
         bookCoverContainer.classList.add('active');
         isActive = true;
@@ -51,7 +51,7 @@ function createCarouselItem(bookCover, bookId, bookTitle, bookAuthor, bookYear) 
 
     bookCoverContainer.appendChild(arrowIcon);
     bookCoverContainer.appendChild(bookCoverImg);
-    carousel.appendChild(bookCoverContainer); 
+    carousel.appendChild(bookCoverContainer);
 }
 
 
@@ -61,8 +61,8 @@ function expandBookCover(event) {
     const clicked = event.currentTarget;
     const bookId = clicked.dataset.bookId;
 
-    books.forEach(book => { 
-        book.classList.remove('active'); 
+    books.forEach(book => {
+        book.classList.remove('active');
     });
 
     clicked.classList.add('active');
@@ -88,7 +88,7 @@ async function updateBookInfo(id) {
     const bookInfoContainer = document.querySelector('.book-title-author-container');
     const book = await getBookById(id);
 
-    bookInfoContainer.innerHTML= `<h2>${book.titulo}</h2> <span>${book.autor} - ${book.ano_publicacao}</span>`;
+    bookInfoContainer.innerHTML = `<h2>${book.titulo}</h2> <span>${book.autor} - ${book.ano_publicacao}</span>`;
 }
 
 // Adiciona a função de mudar a página atual a todas as páginas
@@ -113,13 +113,16 @@ async function loadCatalogBooks() {
     booksInfo.results.forEach(book => {
         createCatalogItem(book.capa, book.id, book.titulo, book.autor, book.ano_publicacao, book.resumo, book.numero_paginas, book.editora);
     });
+
+    const addBookButton = document.getElementById('add-button-container');
+    addBookButton.onclick = changeDisplayStateModalAdd;
 }
 
 // Função para criar os elementos do catálogo dinamicamente
 function createCatalogItem(bookCover, bookId, bookTitle, bookAuthor, bookYear, bookSummary, bookPages, bookPublisher) {
     const bookCoverContainer = document.createElement('div');
     bookCoverContainer.classList.add('book-cover');
-    bookCoverContainer.onclick=changeDisplayStatePreview;
+    bookCoverContainer.onclick = changeDisplayStatePreview;
 
     bookCoverContainer.dataset.bookId = bookId;
     bookCoverContainer.dataset.bookCover = bookCover;
@@ -148,6 +151,7 @@ function changeDisplayStatePreview(event) {
 }
 
 function fillPreviewModalData(bookData) {
+    const bookPreviewContainer = document.getElementById('book-preview-container');
     const bookCoverImg = document.querySelector('.book-cover-preview img');
     const bookTitle = document.querySelector('.title-preview');
     const bookAuthorYear = document.querySelector('.author-year-preview');
@@ -157,6 +161,7 @@ function fillPreviewModalData(bookData) {
     const editButton = document.getElementById('edit-button-preview');
     const closeButton = document.getElementById('close-button-container');
 
+    bookPreviewContainer.dataset.bookId = bookData.bookId;
     bookCoverImg.src = bookData.bookCover;
     bookTitle.textContent = bookData.bookTitle;
     bookAuthorYear.textContent = `${bookData.bookAuthor} - ${bookData.bookYear}`;
@@ -167,11 +172,44 @@ function fillPreviewModalData(bookData) {
     closeButton.onclick = closePreviewModal;
 }
 
+// Função por abrir e fechar o modal de adicionar livro
+function changeDisplayStateModalAdd(event) {
+    event.stopPropagation();
+    const overlay = document.getElementById('overlay-modal-add');
+    overlay.style.display = overlay.style.display === 'flex' ? 'none' : 'flex';
+}
+
 // Função por abrir e fechar o modal de editar livro
 function changeDisplayStateModalEdit(event) {
     event.stopPropagation();
     const overlay = document.getElementById('overlay-modal-edit');
     overlay.style.display = overlay.style.display === 'flex' ? 'none' : 'flex';
+
+
+    const bookId = event.currentTarget.parentElement.parentElement.dataset.bookId;
+    fillEditModalData(bookId);
+}
+
+async function fillEditModalData(bookId) {
+    const book = await getBookById(bookId);
+    const editModal = document.getElementById('modal-edit');
+    const bookCover = editModal.querySelector('.image-icon');
+    const titleInput = editModal.querySelector('.title-container input');
+    const pagesInput = editModal.querySelector('.pages-container input');
+    const ISBNInput = editModal.querySelector('.code-container input');
+    const authorInput = editModal.querySelector('.author-container input');
+    const yearInput = editModal.querySelector('.year-container input');
+    const publisherInput = editModal.querySelector('.publisher-container input');
+    const summaryInput = editModal.querySelector('.resume-container textarea');
+
+    bookCover.src = book.capa;
+    titleInput.value = book.titulo;
+    pagesInput.value = book.numero_paginas;
+    ISBNInput.value = book.isbn;
+    authorInput.value = book.autor;
+    yearInput.value = book.ano_publicacao;
+    publisherInput.value = book.editora;
+    summaryInput.value = book.resumo;
 }
 
 // Função para fechar o modal de preview
@@ -190,13 +228,13 @@ document.addEventListener('click', (event) => {
     const overlayPreview = document.getElementById('overlay-preview-container');
     const modalPreview = document.getElementById('book-preview-container');
 
-    if (overlayPreview.style.display === 'flex' && !modalPreview.contains(event.target)){
+    if (overlayPreview.style.display === 'flex' && !modalPreview.contains(event.target)) {
         overlayPreview.style.display = 'none';
     }
-    else if (overlayEdit.style.display === 'flex' && !modalEdit.contains(event.target)){
+    else if (overlayEdit.style.display === 'flex' && !modalEdit.contains(event.target)) {
         overlayEdit.style.display = 'none';
     }
-    else if (overlayAdd.style.display === 'flex' && !modalAdd.contains(event.target)){
+    else if (overlayAdd.style.display === 'flex' && !modalAdd.contains(event.target)) {
         overlayAdd.style.display = 'none';
     }
 });

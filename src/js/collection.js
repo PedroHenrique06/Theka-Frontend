@@ -119,7 +119,7 @@ async function loadCatalogBooks() {
 function createCatalogItem(bookCover) {
     const bookCoverContainer = document.createElement('div');
     bookCoverContainer.classList.add('book-cover');
-    bookCoverContainer.onclick=changeDisplayStateModal;
+    bookCoverContainer.onclick=changeDisplayStatePreview;
 
     const bookCoverImg = document.createElement('img');
     bookCoverImg.src = bookCover;
@@ -129,18 +129,36 @@ function createCatalogItem(bookCover) {
     catalog.appendChild(bookCoverContainer);
 }
 
-function changeDisplayStateModal(event) {
+function changeDisplayStatePreview(event) {
+    event.stopPropagation();
+    const overlay = document.getElementById('overlay-preview-container');
+    overlay.style.display = overlay.style.display === 'flex' ? 'none' : 'flex';
+    console.log(overlay.style.display);
+}
+
+function changeDisplayStateModalEdit(event) {
     event.stopPropagation();
     const overlay = document.getElementById('overlay-modal-edit');
     overlay.style.display = overlay.style.display === 'flex' ? 'none' : 'flex';
 }
 
+// Função por fechar os modais ao clicar fora deles
 document.addEventListener('click', (event) => {
-    const overlay = document.getElementById('overlay-modal-edit');
-    const modal = document.getElementById('modal-edit');  
+    const overlayAdd = document.getElementById('overlay-modal-add');
+    const modalAdd = document.getElementById('modal-add');
+    const overlayEdit = document.getElementById('overlay-modal-edit');
+    const modalEdit = document.getElementById('modal-edit');
+    const overlayPreview = document.getElementById('overlay-preview-container');
+    const modalPreview = document.getElementById('book-preview-container');
 
-    if (overlay.style.display === 'flex' && !modal.contains(event.target)){
-        overlay.style.display = 'none';
+    if (overlayPreview.style.display === 'flex' && !modalPreview.contains(event.target)){
+        overlayPreview.style.display = 'none';
+    }
+    else if (overlayEdit.style.display === 'flex' && !modalEdit.contains(event.target)){
+        overlayEdit.style.display = 'none';
+    }
+    else if (overlayAdd.style.display === 'flex' && !modalAdd.contains(event.target)){
+        overlayAdd.style.display = 'none';
     }
 });
 

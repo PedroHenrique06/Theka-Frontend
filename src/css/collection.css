@@ -282,7 +282,7 @@ main {
 
     border: 2px solid #81013A;
     border-radius: 50px;
-    
+
     color: white;
     background-color: #81013A;
 
@@ -304,7 +304,7 @@ main {
 
     opacity: 0;
     white-space: nowrap;
-    transition:  opacity 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .add-button-container:hover {
@@ -327,7 +327,9 @@ main {
     gap: 30px;
 }
 
-.pagination-item, .arrow-left-container, .arrow-right-container {
+.pagination-item,
+.arrow-left-container,
+.arrow-right-container {
     width: 45px;
     height: 45px;
 
@@ -377,29 +379,27 @@ main {
 .book-preview-container {
     display: flex;
     position: relative;
-    
+
     gap: 25px;
     margin: 50px auto;
     max-width: 800px;
-    border-radius: 20px;
+    border-radius: 25px;
 
     background-color: white;
-
 }
 
 /* Estilização do container da capa do livro */
 .book-cover-preview {
-    max-width: 320px;
-    height: autos;
+    width: 320px;
+    height: 100%;
 }
 
 .book-cover-preview img {
     display: block;
+    width: 100%;
     object-fit: cover;
-    
-    max-width: 100%;
 
-    border-radius: 10px;
+    border-radius: 25px;
 }
 
 /* Estilização do container das informações do livro */
@@ -407,17 +407,18 @@ main {
     display: flex;
     flex-direction: column;
 
-    max-width: 350px;
+    width: 400px;
 
     padding: 0 10px;
     gap: 10px;
 }
+
 .book-title-author-preview {
     margin-top: 35px;
 }
 
 .author-year-preview {
-    font-size: 1.5rem;
+    color: #7E7E7D;
 }
 
 .book-resume-preview {
@@ -439,6 +440,7 @@ main {
 .edit-button-preview {
     display: flex;
     justify-content: end;
+    margin-bottom: 20px;
 }
 
 .edit-button-preview button {
@@ -457,18 +459,29 @@ main {
     border: 2px solid #393939;
 }
 
+.edit-button-preview button:hover {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #81013A;    
+}
+
 /* Estilização do botão de fechar o modal de preview */
-.close-button-container button{
+.close-button-container button {
     background-color: transparent;
     border: none;
 
     position: absolute;
-    top: 10px;
-    right: 20px;
+    top: 20px;
+    right: 25px;
+}
+
+.close-button-container button:hover {
+    cursor: pointer;
 }
 
 /* Estilização do envelopador de modal de adição e edição */
-.overlay-modal-add, .overlay-modal-edit {
+.overlay-modal-add,
+.overlay-modal-edit {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
@@ -482,8 +495,8 @@ main {
 
 /* Estilização do modal de adição e edição de material */
 .add-to-catalog-container,
-.edit-catalog-container {   
-    display: flex; 
+.edit-catalog-container {
+    display: flex;
     flex-direction: column;
 
     margin: 50px auto;
@@ -491,16 +504,17 @@ main {
     border-radius: 20px;
 }
 
-.add-to-catalog-container, .edit-catalog-container {
-    
+.add-to-catalog-container,
+.edit-catalog-container {
+
     position: absolute;
     top: 50%;
     left: 50%;
 
     padding: 50px;
-    
+
     background-color: white;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
 .add-to-catalog-container .title-container h2,
@@ -563,7 +577,7 @@ main {
 
 /* Estilização do container do formulário do modal de adição e ediçãol*/
 .form-container {
-    max-width: 100%; 
+    max-width: 100%;
 }
 
 .form-wrapper {
@@ -660,7 +674,7 @@ main {
 .buttons-container .buttons-wrapper {
     display: flex;
     justify-content: space-between;
-    
+
     width: 100%;
 }
 
@@ -717,7 +731,7 @@ main {
         margin: 50px 0;
         width: fit-content;
     }
- 
+
 
     /* Estilização da sessão de filtro e catálogo */
     .title-filter-catalog-container h1 {

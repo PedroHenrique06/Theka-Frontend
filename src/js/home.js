@@ -1,6 +1,10 @@
-
 const books = document.querySelectorAll('.book-item');
-// const arrowButtons = document.querySelectorAll('.arrow-icon');
+const buttonGoToCollection = document.querySelector('.collection-button-container button');
+const buttonGoToCompleteCollection = document.querySelector('.complete-collection-container button');
+
+// Adiciona a função de ir à página de acervo aos botões
+buttonGoToCollection.onclick = goToCollectionPage;
+buttonGoToCompleteCollection.onclick = goToCollectionPage;
 
 // Adiciona a função de movimentar a pilha de livros a cada capa
 books.forEach(book => {
@@ -24,3 +28,9 @@ function rotateBooks() {
         }
     });
 }
+
+// Função do botão para ir à página de acervo
+function goToCollectionPage() {
+    window.location.href = './collection.html';
+} 
+

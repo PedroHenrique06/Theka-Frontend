@@ -72,16 +72,13 @@ main {
     border-style: none;
     padding: 10px 20px 10px 20px;
 
-    color: white
-
-}
-
-.Natal-container button{
-    background-color: var( --purple);
-}
-
-.Midway-container button{
+    color: white;
+    
     background-color: #7E7E7D;
+}
+
+.button-container.active button {
+    background-color: var(--purple);
 }
 
 .address-container {

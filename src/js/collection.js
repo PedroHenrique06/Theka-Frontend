@@ -1,4 +1,4 @@
-import { getBooks, getBookWeekNews, getBookById } from "./api.js";
+import { getBooks, getBookWeekNews, getBookById } from "./collectionApi.js";
 
 const carousel = document.getElementById('carousel-container');
 let isRotated = false;

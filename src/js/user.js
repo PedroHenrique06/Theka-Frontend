@@ -1,9 +1,11 @@
-import { getUsers, postUserData } from "./api.js";
+import { getUsers, postUserData } from "./userApi.js";
 
 const signupContainer = document.getElementById('signup-container');
 const saveButton = signupContainer.querySelector('.save-button');
 
-saveButton.onclick=registerUser;
+if (saveButton) {
+    saveButton.onclick=registerUser;
+}
 
 // Função para cadastrar um novo usuário
 async function registerUser() {

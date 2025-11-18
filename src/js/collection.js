@@ -240,6 +240,7 @@ document.addEventListener('click', (event) => {
     }
 });
 
-loadCatalogBooks();
-loadCarousel();
-
+document.addEventListener('DOMContentLoaded', () => {
+    loadCarousel();
+    loadCatalogBooks();
+});

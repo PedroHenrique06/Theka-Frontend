@@ -69,14 +69,19 @@
     gap: 20px;
 }
 
+.profile-icon-container img:hover {
+    width: 35px;
+    cursor: pointer;
+}
+
 .exit-icon-container {
     display: none;
+
 }
 
 .exit-icon-container img:hover {
-    background-color: rgba(255, 255, 255, 0.753);
-    border: solid 1px rgba(107, 6, 6, 0.555);
-    padding: 5px;
+    width: 30px;
+    cursor: pointer;
 }
 
 /* Estilização do menu mobile */

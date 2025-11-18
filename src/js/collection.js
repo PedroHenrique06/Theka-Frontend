@@ -5,7 +5,6 @@ let isRotated = false;
 let isActive = false;
 
 const catalog = document.getElementById('book-rows-container');
-
 const pages = document.querySelectorAll('.pagination-item');
 
 // Função para carregar os livros do carrossel
@@ -150,6 +149,7 @@ function changeDisplayStatePreview(event) {
     fillPreviewModalData(event.currentTarget.dataset);
 }
 
+// Função para preencher os dados do livro dentro do modal de preview
 function fillPreviewModalData(bookData) {
     const bookPreviewContainer = document.getElementById('book-preview-container');
     const bookCoverImg = document.querySelector('.book-cover-preview img');
@@ -190,10 +190,11 @@ function changeDisplayStateModalEdit(event) {
     fillEditModalData(bookId);
 }
 
+// Função para preencher os dados do livro dentro do modal de edição
 async function fillEditModalData(bookId) {
     const book = await getBookById(bookId);
     const editModal = document.getElementById('modal-edit');
-    const bookCover = editModal.querySelector('.image-icon');
+    const bookCover = editModal.querySelector('.book-cover');
     const titleInput = editModal.querySelector('.title-container input');
     const pagesInput = editModal.querySelector('.pages-container input');
     const ISBNInput = editModal.querySelector('.code-container input');

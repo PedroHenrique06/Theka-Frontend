@@ -166,7 +166,7 @@ function fillPreviewModalData(bookData) {
     bookTitle.textContent = bookData.bookTitle;
     bookAuthorYear.textContent = `${bookData.bookAuthor} - ${bookData.bookYear}`;
     bookSummary.textContent = bookData.bookSummary;
-    bookPages.textContent = `páginas: ${bookData.bookPages}`;
+    bookPages.textContent = `Páginas: ${bookData.bookPages}`;
     bookPublisher.textContent = `${bookData.bookPublisher}`;
     editButton.onclick = changeDisplayStateModalEdit;
     closeButton.onclick = closePreviewModal;

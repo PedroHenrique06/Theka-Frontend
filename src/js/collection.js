@@ -232,10 +232,10 @@ document.addEventListener('click', (event) => {
     if (overlayPreview.style.display === 'flex' && !modalPreview.contains(event.target)) {
         overlayPreview.style.display = 'none';
     }
-    else if (overlayEdit.style.display === 'flex' && !modalEdit.contains(event.target)) {
+    if (overlayEdit.style.display === 'flex' && !modalEdit.contains(event.target)) {
         overlayEdit.style.display = 'none';
     }
-    else if (overlayAdd.style.display === 'flex' && !modalAdd.contains(event.target)) {
+    if (overlayAdd.style.display === 'flex' && !modalAdd.contains(event.target)) {
         overlayAdd.style.display = 'none';
     }
 });

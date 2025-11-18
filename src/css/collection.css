@@ -659,6 +659,8 @@ main {
     font-family: 'Inter', sans-serif;
     font-weight: 800;
     font-style: extra bold;
+
+    cursor: pointer;
 }
 
 .add-to-catalog-container .buttons-container .cancel-button-container button,

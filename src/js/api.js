@@ -5,6 +5,11 @@ const API_BASE_URL = "https://thekaapi.pythonanywhere.com";
 export async function getBooks() {
     try{
         const response = await fetch(`${API_BASE_URL}/livros/`);
+
+        if (!response.ok) {
+            throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);
+        }
+
         return await response.json(); 
     }
     catch(error) {
@@ -16,6 +21,11 @@ export async function getBooks() {
 export async function getBookWeekNews() {
     try {
         const response = await fetch(`${API_BASE_URL}/livros/novidades/`);
+
+        if (!response.ok) {
+            throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);
+        }
+
         return await response.json();
     }
     catch(error) {
@@ -27,6 +37,11 @@ export async function getBookWeekNews() {
 export async function getBookById(id) {
     try {
         const response = await fetch(`${API_BASE_URL}/livros/${id}/`);
+
+        if (!response.ok) {
+            throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);
+        }
+
         return await response.json();
     }
     catch(error) {
@@ -38,6 +53,11 @@ export async function getBookById(id) {
 export async function getInstituicionalContacts() {
     try {
         const response = await fetch(`${API_BASE_URL}/institucional/contato/`);
+
+        if (!response.ok) {
+            throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);
+        }
+
         return await response.json();
     }
     catch(error) {

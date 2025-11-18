@@ -311,6 +311,7 @@ main {
     width: 190px;
     justify-content: flex-start;
     padding-left: 20px;
+    padding-right: 0px;
 }
 
 .add-button-container:hover .label {
@@ -462,7 +463,8 @@ main {
 .edit-button-preview button:hover {
     cursor: pointer;
     transition: all 0.3s ease;
-    background-color: #81013A;    
+    background-color: #81013A;
+    border: 2px solid #81013A;    
 }
 
 /* Estilização do botão de fechar o modal de preview */

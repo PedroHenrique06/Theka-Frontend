@@ -65,6 +65,8 @@ export async function postBookData(data) {
         }
 
         const responseData = await response.json();
+        
+        return responseData;
     }
     catch (error) {
         console.error('Houve um problema com a operação POST:', error);

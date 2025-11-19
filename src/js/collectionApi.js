@@ -73,3 +73,29 @@ export async function postBookData(data) {
         throw error;
     }
 }
+
+// Função para modificar/atualizar as informações de um livro
+export async function putBookData(data, id) {
+    try {
+        const options = {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        }
+
+        const response = await fetch(`${API_BASE_URL}/livros/${id}`, options);
+
+        if(!response.ok) {
+            throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);
+        }
+
+        const responseData = await response.json();
+        
+        return responseData;
+
+    }
+    catch(error) {
+        console.error('Houve um problema com a operação PUT:', error);
+        throw error;
+    }
+}

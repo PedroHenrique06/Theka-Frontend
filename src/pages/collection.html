@@ -250,12 +250,14 @@
         </div>
         <!-- Container da edição da capa do livro -->
         <div class="add-book-cover-form-container">
-            <div class="book-cover-container">
+            <div id="cover-container" class="book-cover-container">
                 <img src="/images/collection/image-icon.png" class="image-icon" alt="ícone de imagem">
-                <button>
+                <button id="insert-image-button">
                     <span>Adicionar capa</span>
                     <img src="/images/collection/upload-icon.png" class="upload-icon" alt="ícone de upload">
                 </button>
+                <!-- Botão para pegar a imagem de capa -->
+                <input type="file" id="cover-input" accept="image/*" style="display:none;">
             </div>
             <!-- Container do formulário com os dados do material -->
             <div class="form-container">
@@ -322,7 +324,7 @@
         <div class="edit-book-cover-form-container">
             <!-- Container da edição da capa do livro -->
             <div class="edit-book-cover-container">
-                <img src="#" class="book-cover" alt="capa do livro">
+                <img src="#" id="cover" class="book-cover" alt="capa do livro">
             </div>
             <div class="form-buttons-container">
                 <!-- Container do formulário com os dados do material -->

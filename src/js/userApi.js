@@ -53,7 +53,12 @@ export async function validadeUser(credentials){
         const response = await fetch(`${API_BASE_URL}/auth/token/`, options);
         
         if (!response.ok) {
-            throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);   
+            if (response.status === 401){
+                throw new Error();
+            }
+            else {
+                throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);
+            }
         }
     
         const data = await response.json();
@@ -62,11 +67,9 @@ export async function validadeUser(credentials){
 
         sessionStorage.setItem('AuthToken', token);
         sessionStorage.setItem('AuthRefresh', refresh);
-
-        return data;
     }
     catch (error) {
-        console.error('Houve um problema com a validação de usuário:', error);
+        console.error('Houve um problema com a validação de usuário.');
         throw error;
     }
 }

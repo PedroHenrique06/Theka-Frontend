@@ -66,8 +66,10 @@ async function registerUser() {
 
 // Função para realizar o login do usuário
 async function login() {
-    const email = loginContainer.querySelector('#email').value.trim();
-    const password = loginContainer.querySelector('#password').value;
+    const emailContainer = loginContainer.querySelector('#email');
+    const passwordContainer = loginContainer.querySelector('#password');
+    const email = emailContainer.value.trim();
+    const password = passwordContainer.value;
 
     const credentials = {
         "username": email,
@@ -75,11 +77,15 @@ async function login() {
     }
 
     try {
-        const result =  await validadeUser(credentials);
+        await validadeUser(credentials);
         console.log("Login realizado com sucesso.");
+        window.location.href="./home.html";
     }
     catch(error){
-        console.error("Falha ao realizar o login do usuário:", error);
+        alert('E-mail ou senha incorretos, tente novamente.');
     }
+
+    emailContainer.value = "";
+    passwordContainer.value = "";
 }
 

@@ -1,5 +1,4 @@
-# Theka-Frontend 📚🌐
-# 📚 Theka – Sistema de Biblioteca Online
+# 📚🌐 Theka – Sistema de Biblioteca Online
 
 Theka é um projeto de frontend desenvolvido como parte do desafio Trainee da EJECT e tem como objetivo criar uma plataforma web moderna para o gerenciamento da biblioteca Theka.
 O sistema oferece interfaces para usuários navegarem pelo catálogo, visualizarem detalhes, interagirem com um carrossel dinâmico de recomendações e realizarem login e cadastro.

@@ -302,12 +302,12 @@ async function registerBook() {
         "genero": "indefinido"
     }
 
-    console.log(bookData);
-
     try {
-        await postBookData(bookData);
-        alert("Livro cadastrado com sucesso.")
-        form.reset();
+        const response = await postBookData(bookData);
+        if(response) {
+            alert("Livro cadastrado com sucesso.");
+            form.reset();
+        }
         loadCatalogBooks();
     }
     catch(error) {
@@ -339,8 +339,10 @@ async function updateBook(){
     }
 
     try {
-        await putBookData(updatedBookData, id);
-        alert("Livro atualizado com sucesso.");
+        const reponse = await putBookData(updatedBookData, id);
+        if(response) {
+            alert("Livro atualizado com sucesso.");
+        }
         loadCatalogBooks();
     }
     catch(error){

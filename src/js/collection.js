@@ -248,13 +248,13 @@ async function registerBook() {
     const bookData = {
         "titulo": title,
         "numero_paginas": pages,
-        "capa": "",
+        "capa": 'https://exemplo/capa',
         "isbn": isbn,
         "autor": author,
         "ano_publicacao": year,
         "editora": publisher,
         "resumo": summary,
-        "genero": ""
+        "genero": "indefinido"
     }
 
     console.log(bookData);

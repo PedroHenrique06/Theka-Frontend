@@ -41,3 +41,42 @@ export async function postUserData(data) {
         throw error;
     }
 }
+
+// Função para validar o login do usuário
+export async function validadeUser(credentials){
+    const options = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(credentials)
+    }
+    try{
+        const response = await fetch(`${API_BASE_URL}/auth/token/`, options);
+        
+        if (!response.ok) {
+            throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);   
+        }
+    
+        const data = await response.json();
+        const token = data.access;
+        const refresh = data.refresh;
+
+        sessionStorage.setItem('AuthToken', token);
+        sessionStorage.setItem('AuthRefresh', refresh);
+
+        return data;
+    }
+    catch (error) {
+        console.error('Houve um problema com a validação de usuário:', error);
+        throw error;
+    }
+}
+
+// Função para retornar o token de acesso
+export function getToken() {
+    return sessionStorage.getItem('AuthToken');
+}
+
+// Função para retornar o renovador de token de acesso
+export function getRefresh() {
+    return sessionStorage.getItem('AuthRefresh');
+}

@@ -1,4 +1,4 @@
-import { getBooks, getBookWeekNews, getBookById } from "./collectionApi.js";
+import { getBooks, getBookWeekNews, getBookById, postBookData } from "./collectionApi.js";
 
 const carousel = document.getElementById('carousel-container');
 let isRotated = false;
@@ -6,6 +6,12 @@ let isActive = false;
 
 const catalog = document.getElementById('book-rows-container');
 const pages = document.querySelectorAll('.pagination-item');
+const modalAddBook = document.getElementById('modal-add');
+const saveNewBook = modalAddBook.querySelector(".save-button-container");
+
+if (saveNewBook) {
+    saveNewBook.onclick=registerBook;
+}
 
 // Função para carregar os livros do carrossel
 async function loadCarousel() {
@@ -218,6 +224,39 @@ function closePreviewModal(event) {
     event.stopPropagation();
     const overlay = document.getElementById('overlay-preview-container');
     overlay.style.display = 'none';
+}
+
+// Função para cadastrar novo livro no catálogo
+async function registerBook() {
+    const title = modalAddBook.querySelector('#title').value.trim();
+    const pages = modalAddBook.querySelector('#pages').value;
+    const isbn = modalAddBook.querySelector('#isbm').value.trim();
+    const author = modalAddBook.querySelector('#author').value.trim();
+    const year = modalAddBook.querySelector('#year').value.trim();
+    const publisher = modalAddBook.querySelector('#publisher').value.trim();
+    const summary = modalAddBook.querySelector('#summary').value;
+
+    const bookData = {
+        "titulo": title,
+        "numero_paginas": pages,
+        "capa": "",
+        "isbn": isbn,
+        "autor": author,
+        "ano_publicacao": year,
+        "editora": publisher,
+        "resumo": summary,
+        "genero": ""
+    }
+
+    console.log(bookData);
+
+    try {
+        const result = await postBookData(bookData);
+        console.log("result:", result);
+    }
+    catch(error) {
+        throw new Error("Falha ao realizar o registro do livro.");
+    }
 }
 
 // Função por fechar os modais ao clicar fora deles

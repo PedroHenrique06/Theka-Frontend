@@ -12,6 +12,17 @@ const modalEditBook = document.getElementById('modal-edit');
 const updateBookButton = modalEditBook.querySelector('.save-button-container');
 const cancelButtonAdd = document.getElementById('cancel-button-add');
 const cancelButtonEdit = document.getElementById('cancel-button-edit');
+const insertImageButton = document.getElementById('insert-image-button');
+const fileInput = document.getElementById('cover-input');
+
+// Associação de funções a botões
+if (saveNewBookButton) {
+    saveNewBookButton.onclick=registerBook;
+}
+
+if(updateBookButton) {
+    updateBookButton.onclick=updateBook;
+}
 
 if (cancelButtonAdd) {
     cancelButtonAdd.onclick=closeModalAdd;
@@ -21,13 +32,19 @@ if (cancelButtonEdit) {
     cancelButtonEdit.onclick=closeModalEdit;
 }
 
-// Associação de funções a botões
-if (saveNewBookButton) {
-    saveNewBookButton.onclick=registerBook;
+if(insertImageButton) {
+    insertImageButton.onclick=uploadImage;
 }
 
-if(updateBookButton) {
-    updateBookButton.onclick=updateBook;
+function uploadImage() {
+    if (fileInput) {
+        fileInput.click();
+        const file = fileInput.files[0];
+        if(!file) {
+            alert('Algo deu errado. :(');
+            return;
+        }
+    }
 }
 
 // Função para carregar os livros do carrossel
@@ -277,7 +294,6 @@ async function registerBook() {
     const bookData = {
         "titulo": title,
         "numero_paginas": pages,
-        "capa": 'https://exemplo/capa',
         "isbn": isbn,
         "autor": author,
         "ano_publicacao": year,

@@ -1,26 +1,46 @@
 import { getUsers, postUserData, validadeUser } from "./userApi.js";
 
+const loginContainer = document.getElementById('login-container');
+let enterButton = "";
 const signupContainer = document.getElementById('signup-container');
 let saveButton = "";
 
-const loginContainer = document.getElementById('login-container');
-let enterButton = "";
-
-
+// Garante que o elemento existe antes de associar uma função a ele
+if (loginContainer) {
+    enterButton = loginContainer.querySelector('.enter-button');
+}
+if (enterButton) {
+    enterButton.onclick=login;
+}
 if (signupContainer) {
     saveButton = signupContainer.querySelector('.save-button');
 }
-
 if (saveButton) {
     saveButton.onclick=registerUser;
 }
 
-if (loginContainer) {
-    enterButton = loginContainer.querySelector('.enter-button');
-}
+// Função para realizar o login do usuário
+async function login() {
+    const emailContainer = loginContainer.querySelector('#email').value.trim();;
+    const passwordContainer = loginContainer.querySelector('#password').value;
 
-if (enterButton) {
-    enterButton.onclick=login;
+    const credentials = {
+        "username": email,
+        "password": password 
+    }
+
+    try {
+        await validadeUser(credentials);
+        console.log("Login realizado com sucesso.");
+        window.location.href="./home.html";
+    }
+    catch(error){
+        alert('E-mail ou senha incorretos, tente novamente.');
+    }
+    finally {
+        const form = document.getElementById('login-form');
+        form.reset();
+    }
 }
 
 // Função para cadastrar um novo usuário
@@ -69,30 +89,5 @@ async function registerUser() {
         const form = document.getElementById('signup-form');
         form.reset();
     }
-}
-
-// Função para realizar o login do usuário
-async function login() {
-    const emailContainer = loginContainer.querySelector('#email').value.trim();;
-    const passwordContainer = loginContainer.querySelector('#password').value;
-
-    const credentials = {
-        "username": email,
-        "password": password 
-    }
-
-    try {
-        await validadeUser(credentials);
-        console.log("Login realizado com sucesso.");
-        window.location.href="./home.html";
-    }
-    catch(error){
-        alert('E-mail ou senha incorretos, tente novamente.');
-    }
-    finally {
-        const form = document.getElementById('login-form');
-        form.reset();
-    }
-
 }
 

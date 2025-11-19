@@ -4,6 +4,17 @@ const menuProfileButton = document.getElementById('profile-icon');
 const menuExitButton = document.querySelector('.exit-icon-container');
 const cancelButton = document.getElementById('signup-cancel-button');
 const backButton = document.getElementById('recovery-back-button');
+const exitButton = document.getElementById('exit-icon');
+
+if (exitButton) {
+    exitButton.onclick=logout;
+ }
+
+function logout(){
+    alert('Encerrando sessão...');
+    localStorage.clear();
+    window.location.href='./login.html';
+}
 
 // Associação de botões a funções
 document.addEventListener('DOMContentLoaded', () => {
@@ -34,7 +45,6 @@ if(menuProfileButton) {
         menuExitButton.style.display = menuExitButton.style.display === 'block' ? 'none' : 'block';
     });
 }
-
 
 if(sideMenu && sideMenuButton && menuExitButton) {
     // Verifica se o clique foi dentro do container escolhido

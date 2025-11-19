@@ -52,13 +52,13 @@ export async function getBookWeekNews() {
 // Função para cadastrar um novo livro
 export async function postBookData(data) {
     try {
-        options = {
+        const options = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         };
 
-        const response = await fetch(`${API_BASE_URL}/livros/`);
+        const response = await fetch(`${API_BASE_URL}/livros/`, options);
 
         if(!response.ok) {
             throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);

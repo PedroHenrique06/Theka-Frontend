@@ -21,8 +21,8 @@ if (saveButton) {
 
 // Função para realizar o login do usuário
 async function login() {
-    const emailContainer = loginContainer.querySelector('#email').value.trim();;
-    const passwordContainer = loginContainer.querySelector('#password').value;
+    const email = loginContainer.querySelector('#email').value.trim();;
+    const password = loginContainer.querySelector('#password').value;
 
     const credentials = {
         "username": email,

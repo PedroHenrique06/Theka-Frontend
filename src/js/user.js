@@ -25,16 +25,21 @@ if (enterButton) {
 
 // Função para cadastrar um novo usuário
 async function registerUser() {
-    const name = signupContainer.querySelector('#name').value.trim();
-    const email = signupContainer.querySelector('#email').value.trim(); 
-    const password = signupContainer.querySelector('#password').value;
-    const passwordConfirmation = signupContainer.querySelector('#confirmation').value;
+    const nameContainer = signupContainer.querySelector('#name');
+    const emailContainer = signupContainer.querySelector('#email'); 
+    const passwordContainer = signupContainer.querySelector('#password');
+    const passwordConfirmationContainer = signupContainer.querySelector('#confirmation');
+    const name = nameContainer.value.trim();
+    const email = emailContainer.value.trim(); 
+    const password = passwordContainer.value;
+    const passwordConfirmation = passwordConfirmationContainer.value;
 
     try {
         const users = await getUsers();
         users.forEach(user => {
             if (user.email === email) {
-                throw new Error('O e-mail indicado já se encontra cadastrado no sistema.');
+                alert('O e-mail indicado já se encontra cadastrado no sistema.');
+                clearForm(nameContainer, emailContainer, passwordContainer, passwordConfirmationContainer);
                 return;
             }
         });
@@ -44,7 +49,8 @@ async function registerUser() {
     }
 
     if (password !== passwordConfirmation) {
-        throw new Error("As senhas digitadas não coincidem.");
+        alert("As senhas digitadas não coincidem.");
+        clearForm(nameContainer, emailContainer, passwordContainer, passwordConfirmationContainer);
         return;
     }
 
@@ -60,8 +66,19 @@ async function registerUser() {
         console.log("result:", result);
     }
     catch(error) {
+        alert('Falha ao realizar o cadastro dos dados do usuário.');
         throw new Error("Falha ao realizar o cadastro dos dados do usuário.");
     }
+    finally {
+        clearForm(nameContainer, emailContainer, passwordContainer, passwordConfirmationContainer);
+    }
+}
+
+function clearForm(nameInput, emailInput, passwordInput, passwordConfirmationInput) {
+    nameInput.value = "";
+    emailInput.value = ""; 
+    passwordInput.value = "";
+    passwordConfirmationInput.value = "";
 }
 
 // Função para realizar o login do usuário
@@ -84,8 +101,10 @@ async function login() {
     catch(error){
         alert('E-mail ou senha incorretos, tente novamente.');
     }
+    finally {
+        emailContainer.value = "";
+        passwordContainer.value = "";
+    }
 
-    emailContainer.value = "";
-    passwordContainer.value = "";
 }
 

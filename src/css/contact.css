@@ -189,7 +189,7 @@ main {
 }
 
 /* Responsividade: smartphone, tablet, notebook e PC */
-@media (min-width: 320px) and (max-width: 1050px) {
+@media (min-width: 320px) and (max-width: 1200px) {
 
     .nav-container {
         display: none;
@@ -273,7 +273,8 @@ main {
 
 }
 
-@media (min-width: 1051px) {
+@media (min-width: 1051px){
+
     .form-container h3 {
         font-size: 1.8rem;
     }

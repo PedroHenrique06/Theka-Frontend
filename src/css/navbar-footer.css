@@ -46,16 +46,16 @@
     justify-content: center;
     
     position: fixed;
-    left: 0;
-    top: 0;
+    margin-top: -200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     width: 100%;
 
     gap: 20px;
     
     z-index: 20;
-
-    margin: 0 auto;
 }
 
 .logo-container {
@@ -131,7 +131,7 @@
 
 .side-menu-container .list-item{
     margin: 10px 0px;
-    padding-left: 0;
+    padding-left: 45px;
 }
 
 .side-menu-container a {

@@ -311,7 +311,7 @@ main {
     width: 190px;
     justify-content: flex-start;
     padding-left: 20px;
-    padding-right: 0px;
+    padding-right: 20px;
 }
 
 .add-button-container:hover .label {

@@ -1,3 +1,4 @@
+import { getAccessToken, refreshAccessToken } from "./userApi.js";
 
 const API_BASE_URL = "https://thekaapi.pythonanywhere.com";
 
@@ -51,10 +52,14 @@ export async function getBookWeekNews() {
 
 // Função para cadastrar um novo livro
 export async function postBookData(data) {
+    const token = getAccessToken();
     try {
         const options = {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
             body: JSON.stringify(data)
         };
 
@@ -76,23 +81,43 @@ export async function postBookData(data) {
 
 // Função para modificar/atualizar as informações de um livro
 export async function putBookData(data, id) {
+    const token = getAccessToken();
     try {
         const options = {
             method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
             body: JSON.stringify(data)
         }
 
         const response = await fetch(`${API_BASE_URL}/livros/${id}/`, options);
 
         if(!response.ok) {
-            throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);
+            if(response.status === 401) {
+                try{
+                    const accessToken = await refreshAccessToken();
+                    if (accessToken){
+                        try{
+                            await putBookData(data, id);
+                        }
+                        catch(error){
+                            console.error('Token de acesso inválido.');
+                        }
+                    }
+                    else {
+                        alert("Falha na operação de atualização de livro.");
+                    }
+                }
+                catch(error){
+                    console.error('Erro na requisição da renovação de token.');
+                }
+            }
+            else {
+                throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);
+            }
         }
-
-        const responseData = await response.json();
-        
-        return responseData;
-
     }
     catch(error) {
         console.error('Houve um problema com a operação PUT:', error);

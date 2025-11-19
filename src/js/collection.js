@@ -309,17 +309,17 @@ async function updateBook(){
     const year = modalEditBook.querySelector('#year').value.trim();
     const publisher = modalEditBook.querySelector('#publisher').value.trim();
     const summary = modalEditBook.querySelector('#summary').value;
+    const cover = modalEditBook.querySelector('#cover').src;
 
     const updatedBookData = {
         "titulo": title,
         "numero_paginas": pages,
-        "capa": "",
         "isbn": isbn,
         "autor": author,
         "ano_publicacao": year,
         "editora": publisher,
         "resumo": summary,
-        "genero": ""
+        "genero": "indefinido"
     }
 
     try {

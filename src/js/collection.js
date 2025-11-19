@@ -10,6 +10,16 @@ const modalAddBook = document.getElementById('modal-add');
 const saveNewBookButton = modalAddBook.querySelector(".save-button-container");
 const modalEditBook = document.getElementById('modal-edit');
 const updateBookButton = modalEditBook.querySelector('.save-button-container');
+const cancelButtonAdd = document.getElementById('cancel-button-add');
+const cancelButtonEdit = document.getElementById('cancel-button-edit');
+
+if (cancelButtonAdd) {
+    cancelButtonAdd.onclick=closeModalAdd;
+}
+
+if (cancelButtonEdit) {
+    cancelButtonEdit.onclick=closeModalEdit;
+}
 
 // Associação de funções a botões
 if (saveNewBookButton) {
@@ -192,6 +202,17 @@ function changeDisplayStateModalAdd(event) {
     overlay.style.display = overlay.style.display === 'flex' ? 'none' : 'flex';
 }
 
+// Função para fechar o formulário de adição de livro 
+function closeModalAdd(event) {
+    const form = document.getElementById('form-add');
+
+    event.stopPropagation();
+    const overlay = document.getElementById('overlay-modal-add');
+    overlay.style.display = 'none';
+
+    form.reset();
+}
+
 // Função por abrir e fechar o modal de editar livro
 function changeDisplayStateModalEdit(event) {
     event.stopPropagation();
@@ -201,6 +222,14 @@ function changeDisplayStateModalEdit(event) {
 
     const bookId = event.currentTarget.parentElement.parentElement.dataset.bookId;
     fillEditModalData(bookId);
+}
+
+// Função para fechar o formulário de edição de livro 
+function closeModalEdit(event){
+    event.stopPropagation();
+
+    const overlay = document.getElementById('overlay-modal-edit');
+    overlay.style.display = 'none';
 }
 
 // Função para preencher os dados do livro dentro do modal de edição

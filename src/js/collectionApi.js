@@ -147,7 +147,7 @@ export async function putBookData(data, id) {
 }
 
 // Função para apagar o livro da base de dados
-export async function deleteBook(id){
+export async function deleteBookById(id){
     const token = getAccessToken();
     try {
         const options = { 

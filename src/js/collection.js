@@ -1,4 +1,4 @@
-import { getBooks, getBookWeekNews, getBookById, postBookData, putBookData } from "./collectionApi.js";
+import { getBooks, getBookWeekNews, getBookById, postBookData, putBookData, deleteBookById } from "./collectionApi.js";
 
 const carousel = document.getElementById('carousel-container');
 let isRotated = false;
@@ -14,6 +14,7 @@ const cancelButtonAdd = document.getElementById('cancel-button-add');
 const cancelButtonEdit = document.getElementById('cancel-button-edit');
 const insertImageButton = document.getElementById('insert-image-button');
 const fileInput = document.getElementById('cover-input');
+const deleteButton = document.getElementById('delete-button');
 
 // Associação de funções a botões
 if (saveNewBookButton) {
@@ -44,6 +45,30 @@ function uploadImage() {
             alert('Algo deu errado. :(');
             return;
         }
+    }
+}
+
+if (deleteButton){
+    deleteButton.onclick=deleteBook;
+}
+
+// Função para deletar um livro
+async function deleteBook() {
+    const id = modalEditBook.dataset.bookId;
+
+    try {
+        const response = await deleteBookById(id);
+        if (response) {
+            alert('Livro deletado com sucesso.');
+        }
+
+        const form = document.getElementById('form-edit');
+        form.reset();
+        loadCatalogBooks();
+    }
+    catch(error) {
+        console.error('Falha ao deletar livro:', error);
+        alert('Falha ao deletar livrol');
     }
 }
 

@@ -592,7 +592,11 @@ main {
     width: 24px;
 }
 
-/* Estilização do container do formulário do modal de adição e ediçãol*/
+#insert-image-button {
+    cursor: pointer;
+}
+
+/* Estilização do container do formulário do modal de adição e edição*/
 .form-container {
     max-width: 100%;
 }

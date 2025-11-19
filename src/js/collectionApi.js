@@ -83,7 +83,7 @@ export async function putBookData(data, id) {
             body: JSON.stringify(data)
         }
 
-        const response = await fetch(`${API_BASE_URL}/livros/${id}`, options);
+        const response = await fetch(`${API_BASE_URL}/livros/${id}/`, options);
 
         if(!response.ok) {
             throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);
@@ -96,6 +96,25 @@ export async function putBookData(data, id) {
     }
     catch(error) {
         console.error('Houve um problema com a operação PUT:', error);
+        throw error;
+    }
+}
+
+// Função para apagar o livro da base de dados
+export async function deleteBook(id){
+    try {
+        const options = { method: 'DELETE' }
+
+        const response = await fetch(`${API_BASE_URL}/livros/${id}/`, options);
+
+        if (!response.ok) {
+            throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);
+        }
+
+        return true;
+    }
+    catch(error) {
+        console.error('Houve um problema com a operação DELETE:', error);
         throw error;
     }
 }

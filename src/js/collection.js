@@ -236,6 +236,7 @@ function closePreviewModal(event) {
 
 // Função para cadastrar novo livro no catálogo
 async function registerBook() {
+    const form = document.getElementById('form-add');
     const title = modalAddBook.querySelector('#title').value.trim();
     const pages = modalAddBook.querySelector('#pages').value;
     const isbn = modalAddBook.querySelector('#isbm').value.trim();
@@ -259,8 +260,10 @@ async function registerBook() {
     console.log(bookData);
 
     try {
-        const result = await postBookData(bookData);
-        console.log("result:", result);
+        await postBookData(bookData);
+        alert("Livro cadastrado com sucesso.")
+        form.reset();
+        loadCatalogBooks();
     }
     catch(error) {
         throw new Error("Falha ao realizar o registro do livro.");
@@ -291,10 +294,12 @@ async function updateBook(){
     }
 
     try {
-        const response = await putBookData(updatedBookData, id);
-        console.log("result:", result);
+        await putBookData(updatedBookData, id);
+        alert("Livro atualizado com sucesso.");
+        loadCatalogBooks();
     }
     catch(error){
+        alert('Falha ao realizar a atualização das informações do livro.');
         throw new Error("Falha ao realizar a atualização das informações do livro.");
     }
 }

@@ -1,4 +1,4 @@
-import { getBooks, getBookWeekNews, getBookById, postBookData } from "./collectionApi.js";
+import { getBooks, getBookWeekNews, getBookById, postBookData, putBookData } from "./collectionApi.js";
 
 const carousel = document.getElementById('carousel-container');
 let isRotated = false;
@@ -7,10 +7,17 @@ let isActive = false;
 const catalog = document.getElementById('book-rows-container');
 const pages = document.querySelectorAll('.pagination-item');
 const modalAddBook = document.getElementById('modal-add');
-const saveNewBook = modalAddBook.querySelector(".save-button-container");
+const saveNewBookButton = modalAddBook.querySelector(".save-button-container");
+const modalEditBook = document.getElementById('modal-edit');
+const updateBookButton = modalEditBook.querySelector('.save-button-container');
 
-if (saveNewBook) {
-    saveNewBook.onclick=registerBook;
+// Associação de funções a botões
+if (saveNewBookButton) {
+    saveNewBookButton.onclick=registerBook;
+}
+
+if(updateBookButton) {
+    updateBookButton.onclick=updateBook;
 }
 
 // Função para carregar os livros do carrossel
@@ -200,6 +207,7 @@ function changeDisplayStateModalEdit(event) {
 async function fillEditModalData(bookId) {
     const book = await getBookById(bookId);
     const editModal = document.getElementById('modal-edit');
+    editModal.dataset.bookId = bookId;
     const bookCover = editModal.querySelector('.book-cover');
     const titleInput = editModal.querySelector('.title-container input');
     const pagesInput = editModal.querySelector('.pages-container input');
@@ -256,6 +264,38 @@ async function registerBook() {
     }
     catch(error) {
         throw new Error("Falha ao realizar o registro do livro.");
+    }
+}
+
+// Função para atualizar os dados de um livro
+async function updateBook(){
+    const id = modalEditBook.dataset.bookId;
+    const title = modalEditBook.querySelector('#title').value.trim();
+    const pages = modalEditBook.querySelector('#pages').value;
+    const isbn = modalEditBook.querySelector('#isbm').value.trim();
+    const author = modalEditBook.querySelector('#author').value.trim();
+    const year = modalEditBook.querySelector('#year').value.trim();
+    const publisher = modalEditBook.querySelector('#publisher').value.trim();
+    const summary = modalEditBook.querySelector('#summary').value;
+
+    const updatedBookData = {
+        "titulo": title,
+        "numero_paginas": pages,
+        "capa": "",
+        "isbn": isbn,
+        "autor": author,
+        "ano_publicacao": year,
+        "editora": publisher,
+        "resumo": summary,
+        "genero": ""
+    }
+
+    try {
+        const response = await putBookData(updatedBookData, id);
+        console.log("result:", result);
+    }
+    catch(error){
+        throw new Error("Falha ao realizar a atualização das informações do livro.");
     }
 }
 

@@ -774,21 +774,31 @@ main {
         height: auto;
     }
 
-    .add-button-container button img {
+    /* Estilização do botão de adicionar livro */
+    .add-button-container {
+        position: absolute;
+        right: 0;
+        top: 200px;
         width: 20px;
-    }
-
-    .add-button-container button {
+        height: 30px;
         padding: 5px 15px;
     }
 
-
-    .add-button-container {
-        width: fit-content;
-
-        position: absolute;
-        right: 0;
-        top: 200px
+    .add-button-container .icon {
+        font-size: 2rem;
     }
 
+    .add-button-container .label {
+        font-size: 1rem;
+    }
+
+    .add-button-container:hover {
+        width: 160px;
+        justify-content: flex-start;
+        padding-left: 20px;
+        padding-right: 0;
+    }
+    .add-button-container button {
+        padding: 5px 15px;
+    }
 }

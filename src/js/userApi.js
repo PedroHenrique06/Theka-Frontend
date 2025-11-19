@@ -48,7 +48,7 @@ export async function validadeUser(credentials){
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(credentials)
-    }
+    };
     try{
         const response = await fetch(`${API_BASE_URL}/auth/token/`, options);
         
@@ -65,8 +65,8 @@ export async function validadeUser(credentials){
         const token = data.access;
         const refresh = data.refresh;
 
-        sessionStorage.setItem('AuthToken', token);
-        sessionStorage.setItem('AuthRefresh', refresh);
+        localStorage.setItem('AccessToken', token);
+        localStorage.setItem('RefreshToken', refresh);
     }
     catch (error) {
         console.error('Houve um problema com a validação de usuário.');
@@ -75,11 +75,40 @@ export async function validadeUser(credentials){
 }
 
 // Função para retornar o token de acesso
-export function getToken() {
-    return sessionStorage.getItem('AuthToken');
+export function getAccessToken() {
+    return localStorage.getItem('AccessToken');
 }
 
 // Função para retornar o renovador de token de acesso
-export function getRefresh() {
-    return sessionStorage.getItem('AuthRefresh');
+export function getRefreshToken() {
+    return localStorage.getItem('RefreshToken');
+}
+
+// Função para renovar o token de acesso
+export async function refreshAccessToken() {
+    const refreshToken = getRefreshToken();
+
+    const options = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({'refresh': refreshToken })
+    }
+
+    try {
+        const response = await fetch(`${API_BASE_URL}/auth/token/refresh/`, options);
+        if (response.ok) {
+            const data = await response.json();
+            localStorage.setItem("AccessToken", data.access);
+            return data.access;
+        }
+        else {
+            console.error('Refresh token inválido — usuário precisa logar novamente.');
+            return null;
+        }
+    }
+    catch (error) {
+        console.error('Houve um problema com a renovação de token de acesso.');
+        throw error;
+    }
+
 }

@@ -66,7 +66,28 @@ export async function postBookData(data) {
         const response = await fetch(`${API_BASE_URL}/livros/`, options);
 
         if(!response.ok) {
-            throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);
+            if(response.status === 401) {
+                try{
+                    const accessToken = await refreshAccessToken();
+                    if (accessToken){
+                        try{
+                            await postBook(id);
+                        }
+                        catch(error){
+                            console.error('Token de acesso inválido.');
+                        }
+                    }
+                    else {
+                        alert('Falha na operação de cadastrar livro.');
+                    }
+                }
+                catch(error){
+                    console.error('Erro na requisição da renovação de token.');
+                }
+            }
+            else {
+                throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);
+            }
         }
 
         const responseData = await response.json();
@@ -127,13 +148,38 @@ export async function putBookData(data, id) {
 
 // Função para apagar o livro da base de dados
 export async function deleteBook(id){
+    const token = getAccessToken();
     try {
-        const options = { method: 'DELETE' }
+        const options = { 
+            method: 'DELETE',
+            'Authorization': `Bearer ${token}`
+        }
 
         const response = await fetch(`${API_BASE_URL}/livros/${id}/`, options);
 
-        if (!response.ok) {
-            throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);
+        if(!response.ok) {
+            if(response.status === 401) {
+                try{
+                    const accessToken = await refreshAccessToken();
+                    if (accessToken){
+                        try{
+                            await deleteBook(id);
+                        }
+                        catch(error){
+                            console.error('Token de acesso inválido.');
+                        }
+                    }
+                    else {
+                        alert('Falha na operação de deleção de livro.');
+                    }
+                }
+                catch(error){
+                    console.error('Erro na requisição da renovação de token.');
+                }
+            }
+            else {
+                throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);
+            }
         }
 
         return true;

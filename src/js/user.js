@@ -4,6 +4,7 @@ const loginContainer = document.getElementById('login-container');
 let enterButton = "";
 const signupContainer = document.getElementById('signup-container');
 let saveButton = "";
+const showPasswordButton = document.getElementById('show-password');
 
 // Garante que o elemento existe antes de associar uma função a ele
 if (loginContainer) {
@@ -17,6 +18,17 @@ if (signupContainer) {
 }
 if (saveButton) {
     saveButton.onclick=registerUser;
+}
+
+if (showPasswordButton) {
+    showPasswordButton.onclick=showPassword;
+}
+
+// Função para visualizar senha
+function showPassword(){
+    const passwordInput = document.getElementById('password');
+    const isPassword = passwordInput.type === 'password';
+    passwordInput.type = isPassword ? 'text' : 'password'
 }
 
 // Função para realizar o login do usuário

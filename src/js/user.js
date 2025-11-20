@@ -5,6 +5,7 @@ let enterButton = "";
 const signupContainer = document.getElementById('signup-container');
 let saveButton = "";
 const showPasswordButton = document.getElementById('show-password');
+const showPasswordConfirmationButton = document.getElementById('show-password-confirmation');
 
 // Garante que o elemento existe antes de associar uma função a ele
 if (loginContainer) {
@@ -24,11 +25,22 @@ if (showPasswordButton) {
     showPasswordButton.onclick=showPassword;
 }
 
+if (showPasswordConfirmationButton) {
+    showPasswordConfirmationButton.onclick=showPasswordConfirmation;
+}
+
 // Função para visualizar senha
 function showPassword(){
     const passwordInput = document.getElementById('password');
     const isPassword = passwordInput.type === 'password';
-    passwordInput.type = isPassword ? 'text' : 'password'
+    passwordInput.type = isPassword ? 'text' : 'password';
+}
+
+// Função para visualizar senha
+function showPasswordConfirmation() {
+    const passwordConfirmationInput = document.getElementById('confirmation');
+    const isPassword = passwordConfirmationInput.type === 'password';
+    passwordConfirmationInput.type = isPassword ? 'text' : 'password';
 }
 
 // Função para realizar o login do usuário
